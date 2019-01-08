@@ -27,6 +27,10 @@ public class Card
         return this.suit;
     }
     
+    public String toString(){
+        return this.getValue() + " of " + this.getSuit();
+    }
+    
     /**@Override
     public int compareTo(Card obj){
         if (obj != null){
