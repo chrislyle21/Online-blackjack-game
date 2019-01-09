@@ -28,7 +28,8 @@ public class Card
     }
     
     public String toString(){
-        return this.getValue() + " of " + this.getSuit();
+        return this.getValue() + " of " + this.getSuit()
+                + " has a value of " + this.getValue().getNumVal();
     }
     
     /**@Override
