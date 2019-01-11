@@ -12,7 +12,7 @@ package blackjack;
 public class Player
 {
     private String playerName;
-    private int playerCredits;
+    private double playerCredits;
     private Bet bet;
     private Action playerAction;
     private PlayerHand playerHand;
@@ -21,7 +21,7 @@ public class Player
         this.playerName = aName;
     }
     
-    int getPlayerCredits(){
+    double getPlayerCredits(){
         return this.playerCredits;
     }
     
@@ -37,7 +37,11 @@ public class Player
         return this.bet; 
     }
     
-    void addCredits(int credits){
+    void setBet(Bet aBet){
+        this.bet = aBet;
+    }
+    
+    void addCredits(double credits){
         this.playerCredits = (this.getPlayerCredits() + credits);
     }
     
@@ -52,7 +56,7 @@ public class Player
         return "Player name: " + this.getPlayerName() + "/nCredits: " + this.getPlayerCredits();
     }
     
-    void deductCredits(int credits){
+    void deductCredits(double credits){
         this.playerCredits = (this.playerCredits - credits);
     }
 }

@@ -4,23 +4,22 @@
  * and open the template in the editor.
  */
 package blackjack;
+import org.junit.Test;
 
 /**
  *
  * @author Chris Lyle
  */
-public class main
+public class TestBlackjackCoord
 {
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args)
-    {
-        // TODO code application logic here
+    @Test
+    public void testPlayer(String aName){
+        BlackjackCoord bjCoord = new BlackjackCoord(5);
+        for(int n = 0; n < 3){
+            
+        }
+        
+        
     }
-    
-
-    
     
 }

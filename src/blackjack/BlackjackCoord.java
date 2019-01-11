@@ -7,6 +7,7 @@ package blackjack;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 /**
  *
@@ -31,8 +32,9 @@ public class BlackjackCoord
         return this.players;
     }
     
-    public void addPlayer(String aName){
-        players.add(new Player(aName));
+    public void addPlayer(Player aPlayer){
+        players.add(aPlayer);
+        aPlayer.addCredits(1000);
     }
     
     public Map<Dealer, Set<Player>> getDealerAndPlayers(){
@@ -51,6 +53,20 @@ public class BlackjackCoord
             bets.add(each.getBet());
         }
         return bets;
+    }
+    
+    public boolean placeBet(Player aPlayer, double bet){
+        boolean result = false;
+            if((aPlayer.getPlayerCredits() - bet) > 0 ){
+                aPlayer.setBet(new Bet(aPlayer, bet));
+                aPlayer.deductCredits(bet);
+                result = true;
+            }
+            return result;
+    } 
+    
+    public void dealCards(){
+        this.getDealer().getDecks();
     }
     
     /**
@@ -84,4 +100,5 @@ public class BlackjackCoord
     public double getMinimumBet(){
         return this.minimumBet;
     }
+   
 }

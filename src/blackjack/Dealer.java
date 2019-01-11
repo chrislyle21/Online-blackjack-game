@@ -6,6 +6,8 @@
 package blackjack;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  *
@@ -39,6 +41,15 @@ public class Dealer
     
     DealerHand getDealerHand(){
         return this.dealerHand;
+    }
+    
+    void dechuffle(){
+        for(Deck each : this.getDecks()){
+            List<Deck> listArr = Arrays.asList(each);
+            for(int n ){
+                Collections.shuffle(listArr);
+            }
+        }
     }
     
     @Override
