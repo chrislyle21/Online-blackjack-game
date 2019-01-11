@@ -14,8 +14,8 @@ import java.util.List;
  */
 abstract class Hand
 {
-    private int handValue;
-    private List<Card> cards;
+    private final int handValue;
+    private final List<Card> cards;
     
     Hand(){
         this.handValue = 0;

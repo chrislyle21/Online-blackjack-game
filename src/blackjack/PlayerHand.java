@@ -16,12 +16,5 @@ public class PlayerHand extends Hand
     PlayerHand(){
         super();
     }
-    
-    PlayerHand splitHand(PlayerHand aHand){
-        PlayerHand handTwo = new PlayerHand();
-        handTwo.addToHand(this.getCards().get(1));
-        this.getCards().remove(this.getCards().get(1));
-        return handTwo;
-    }
 }
 

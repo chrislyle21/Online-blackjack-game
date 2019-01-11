@@ -7,17 +7,11 @@ package blackjack;
 
 /**
  *
- * @author chris
+ * @author Chris Lyle
  */
-public class Blackjack
+public class DealerHand extends Hand
 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args)
-    {
-        
+    DealerHand(){
+        super();
     }
-    
 }

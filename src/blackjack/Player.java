@@ -15,7 +15,7 @@ public class Player
     private int playerCredits;
     private Bet bet;
     private Action playerAction;
-    private PlayerHand hand;
+    private PlayerHand playerHand;
     
     Player(String aName){
         this.playerName = aName;
@@ -42,7 +42,7 @@ public class Player
     }
     
     PlayerHand getPlayerHand(){
-        return this.hand;
+        return this.playerHand;
     }
     
     String getPlayerName(){

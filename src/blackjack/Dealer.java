@@ -33,6 +33,15 @@ public class Dealer
         return this.dealerAction;
     }
     
+    void setAction(Action anAction){
+        this.dealerAction = anAction;
+    }
+    
+    DealerHand getDealerHand(){
+        return this.dealerHand;
+    }
+    
+    @Override
     public String toString(){
         return "Number of decks: " + this.getDecks().size() 
                 + "\nDealer action = " + this.getDealerAction();

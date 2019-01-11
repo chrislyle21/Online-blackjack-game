@@ -11,8 +11,8 @@ package blackjack;
  */
 public class Card
 {
-    private Value value;
-    private Suit suit;
+    private final Value value;
+    private final Suit suit;
     
     Card(Value aValue, Suit aSuit){
         this.value = aValue;
@@ -27,6 +27,7 @@ public class Card
         return this.suit;
     }
     
+    @Override
     public String toString(){
         return this.getValue() + " of " + this.getSuit()
                 + " has a value of " + this.getValue().getNumVal();
