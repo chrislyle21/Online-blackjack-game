@@ -37,9 +37,10 @@ abstract class Hand
         return this.handValue;
     }
     
-    /**void setHandValue(){
+    void setHandValue(){
+        int value = 0;
         for(Card each : this.cards){
-            Value value = each.getValue();
-        }**/
-    
+            value = value + each.getValue().getNumVal();
+        }
+    }
 }

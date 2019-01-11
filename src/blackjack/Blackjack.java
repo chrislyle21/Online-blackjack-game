@@ -19,7 +19,6 @@ public class Blackjack
     {
         Deck d1 = new Deck();
         d1.printDeck();
-      
     }
     
 }

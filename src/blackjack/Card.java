@@ -31,21 +31,5 @@ public class Card
         return this.getValue() + " of " + this.getSuit()
                 + " has a value of " + this.getValue().getNumVal();
     }
-    
-    /**@Override
-    public int compareTo(Card obj){
-        if (obj != null){
-            Card card = obj;
-            
-            if (this.getValue() > card.getValue() && 
-                    this.getSuit().equals(card.getSuit())){
-                return 1;
-            }
-            else if (this.getValue() < card.getValue() && this.getSuit().equals(card.getSuit()))
-                    {
-                return -1;
-            }
-        }
-        return result;**/
 }
 

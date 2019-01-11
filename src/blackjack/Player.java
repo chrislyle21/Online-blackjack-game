@@ -41,15 +41,15 @@ public class Player
         this.playerCredits = (this.getPlayerCredits() + credits);
     }
     
-    PlayerHand getHand(){
+    PlayerHand getPlayerHand(){
         return this.hand;
     }
     
-    String getName(){
+    String getPlayerName(){
         return this.playerName;
     }
     public String toString(){
-        return "Player name: " + this.getName() + "/nCredits: " + this.getPlayerCredits();
+        return "Player name: " + this.getPlayerName() + "/nCredits: " + this.getPlayerCredits();
     }
     
     void deductCredits(int credits){
