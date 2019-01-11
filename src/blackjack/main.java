@@ -7,15 +7,17 @@ package blackjack;
 
 /**
  *
- * @author chris
+ * @author Chris Lyle
  */
-public enum Action
+public class main
 {
-    HIT,
-    STAND,
-    BUST,
-    INSURANCE,
-    SPLIT,
-    DOUBLE,
-    SURRENDER;
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)
+    {
+        // TODO code application logic here
+    }
+    
 }

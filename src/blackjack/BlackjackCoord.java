@@ -18,8 +18,8 @@ public class BlackjackCoord
     private final Dealer dealer;
     private final Set<Player> players;
     
-    public BlackjackCoord(double aMinimumBet){
-        this.minimumBet = aMinimumBet;
+    public BlackjackCoord(double aMinBet){
+        this.minimumBet = aMinBet;
         this.dealer = new Dealer();
         this.players = new HashSet<>();
     }
@@ -41,6 +41,10 @@ public class BlackjackCoord
         return dealersAndPlayers;
     }
     
+    /**
+     *
+     * @return
+     */
     public Set<Bet> getBets(){
         Set<Bet> bets = new HashSet<>();
         for(Player each : this.getPlayers()){
@@ -49,15 +53,35 @@ public class BlackjackCoord
         return bets;
     }
     
-    
-
     /**
-     * @param args the command line arguments
+     *
+     * @param aPlayer
+     * @return
      */
-    public static void main(String[] args)
-    {
-        
-        
+    public Bet getPlayerBet(Player aPlayer){
+        return aPlayer.getBet();
     }
     
+    public Action getPlayerAction(Player aPlayer){
+        return aPlayer.getPlayerAction();
+    }
+    
+    public Action getDealerAction(){
+        
+        return this.getDealer().getDealerAction();
+    }
+    
+    public void setDealerAction(String anAction){
+        Action action = Action.valueOf(anAction);
+        this.getDealer().setAction(action);
+    }
+    
+    public void setPlayerAction(Player aPlayer, String anAction){
+        Action action = Action.valueOf(anAction);
+        aPlayer.setPlayerAction(action);
+    }
+    
+    public double getMinimumBet(){
+        return this.minimumBet;
+    }
 }
