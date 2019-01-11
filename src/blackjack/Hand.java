@@ -14,8 +14,8 @@ import java.util.List;
  */
 abstract class Hand
 {
-    private int handValue;
-    private List<Card> cards;
+    private final int handValue;
+    private final List<Card> cards;
     
     Hand(){
         this.handValue = 0;
@@ -37,9 +37,10 @@ abstract class Hand
         return this.handValue;
     }
     
-    /**void setHandValue(){
+    void setHandValue(){
+        int value = 0;
         for(Card each : this.cards){
-            Value value = each.getValue();
-        }**/
-    
+            value = value + each.getValue().getNumVal();
+        }
+    }
 }

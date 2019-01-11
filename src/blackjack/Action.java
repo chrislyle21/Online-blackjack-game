@@ -17,6 +17,5 @@ public enum Action
     INSURANCE,
     SPLIT,
     DOUBLE,
-    SURRENDER
-    
+    SURRENDER;
 }

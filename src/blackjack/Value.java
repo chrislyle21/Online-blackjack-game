@@ -5,6 +5,8 @@
  */
 package blackjack;
 
+import java.util.Arrays;
+
 /**
  *
  * @author chris
@@ -32,5 +34,10 @@ public enum Value {
     
     int getNumVal(){
         return this.numVal;
+    }
+    
+    @Override
+    public String toString(){
+        return Arrays.toString(Value.values());
     }
 }

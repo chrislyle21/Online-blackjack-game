@@ -11,7 +11,7 @@ package blackjack;
  */
 public final class Deck
 {
-    private Card[] cardArr;
+    private final Card[] cardArr;
     
     Deck(){
         this.cardArr = new Card[52];
@@ -28,13 +28,14 @@ public final class Deck
         }
     }
     
-    public void printDeck()
-    {
-        String str ="";
-        for (Card card : cardArr)
-        {
-            str += card.toString() + "\n";
-        }
-        System.out.println(str);
+    Card[] getDeck(){
+        return this.cardArr;
     }
+    
+    @Override
+    public String toString(){
+        return "Deck size is: " + this.getDeck().length;
+    }
+    
+    
 }

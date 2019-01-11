@@ -5,16 +5,13 @@
  */
 package blackjack;
 
-import java.util.List;
-
 /**
  *
- * @author chris
+ * @author Chris Lyle
  */
-public class PlayerHand extends Hand
+public class DealerHand extends Hand
 {
-    PlayerHand(){
+    DealerHand(){
         super();
     }
 }
-
