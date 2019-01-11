@@ -22,5 +22,19 @@ public class Dealer
         this.decks = new ArrayList<>();
     }
     
-    List
+    List<Deck> getDecks(){
+        for(int n = 0; n < 6; n++){
+            this.decks.add(n, new Deck());
+        }
+        return this.decks;
+    }
+    
+    Action getDealerAction(){
+        return this.dealerAction;
+    }
+    
+    public String toString(){
+        return "Number of decks: " + this.getDecks().size() 
+                + "\nDealer action = " + this.getDealerAction();
+    }
 }
