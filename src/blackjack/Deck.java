@@ -9,7 +9,7 @@ package blackjack;
  *
  * @author chris
  */
-public final class Deck
+final class Deck
 {
     private final Card[] cardArr;
     
@@ -20,16 +20,22 @@ public final class Deck
     
     void generateDeck(){
         int counter = 0;
+        
         for(Suit each : Suit.values()){
             for(Value eachVal : Value.values()){
                 cardArr[counter] = new Card(eachVal, each);
                 counter++;
             }
         }
+        
     }
     
     Card[] getDeck(){
         return this.cardArr;
+    }
+    
+    Card getCard(int index){
+        return cardArr[index];
     }
     
     @Override

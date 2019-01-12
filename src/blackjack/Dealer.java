@@ -6,12 +6,14 @@
 package blackjack;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  *
  * @author chris
  */
-public class Dealer
+class Dealer
 {
     private List<Deck> decks;
     private Action dealerAction;
@@ -39,6 +41,28 @@ public class Dealer
     
     DealerHand getDealerHand(){
         return this.dealerHand;
+    }
+    
+    List<Card> combineDecks(){
+        List<Card> listArr;
+        Card[] largeArr = new Card[312];
+        int counter = 0;
+        
+        for(Deck eachDeck : this.getDecks()){
+            for(int n = 0; n < eachDeck.getDeck().length; n++){
+                largeArr[n] = eachDeck.getCard(n);
+            }
+            counter = counter + 52;
+        }
+        
+        listArr = Arrays.asList(largeArr);
+        return listArr;
+    }
+    
+    List<Card> ShuffleDecks(){
+        List<Card> shuffledList = this.combineDecks();
+        Collections.shuffle(shuffledList);
+        return shuffledList;
     }
     
     @Override

@@ -9,7 +9,7 @@ package blackjack;
  *
  * @author Chris Lyle
  */
-public class DealerHand extends Hand
+class DealerHand extends Hand
 {
     DealerHand(){
         super();

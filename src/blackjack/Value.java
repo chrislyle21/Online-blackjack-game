@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author chris
  */
-public enum Value {
+enum Value {
     ACE (11),
     TWO (2),
     THREE (3),

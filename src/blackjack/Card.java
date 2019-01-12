@@ -9,7 +9,7 @@ package blackjack;
  *
  * @author chris
  */
-public class Card
+class Card
 {
     private final Value value;
     private final Suit suit;

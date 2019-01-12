@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author chris
  */
-public class PlayerHand extends Hand
+class PlayerHand extends Hand
 {
     PlayerHand(){
         super();
