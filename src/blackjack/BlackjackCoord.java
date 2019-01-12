@@ -24,19 +24,24 @@ public class BlackjackCoord
         this.dealer = new Dealer();
         this.players = new HashSet<>();
     }
-    Dealer getDealer(){
+    public Dealer getDealer(){
         return this.dealer;
     }
     
-    Set<Player> getPlayers(){
+    public Set<Player> getPlayers(){
         return this.players;
     }
     
-    public void addPlayer(Player aPlayer){
-        players.add(aPlayer);
-        aPlayer.addCredits(1000);
+    public void addPlayer(String aName){
+        Player player = new Player(aName);
+        player.addCredits(1000);
+        players.add(player);
     }
     
+    /**
+     *
+     * @return
+     */
     public Map<Dealer, Set<Player>> getDealerAndPlayers(){
         Map<Dealer, Set<Player>> dealersAndPlayers = new HashMap<>();
         dealersAndPlayers.put(this.getDealer(), this.getPlayers());
@@ -49,19 +54,23 @@ public class BlackjackCoord
      */
     public Set<Bet> getBets(){
         Set<Bet> bets = new HashSet<>();
+        
         for(Player each : this.getPlayers()){
             bets.add(each.getBet());
         }
+        
         return bets;
     }
     
     public boolean placeBet(Player aPlayer, double bet){
         boolean result = false;
+        
             if((aPlayer.getPlayerCredits() - bet) > 0 ){
                 aPlayer.setBet(new Bet(aPlayer, bet));
                 aPlayer.deductCredits(bet);
                 result = true;
             }
+            
             return result;
     } 
     
@@ -78,6 +87,11 @@ public class BlackjackCoord
         return aPlayer.getBet();
     }
     
+    /**
+     *
+     * @param aPlayer
+     * @return aPlayer.Action
+     */
     public Action getPlayerAction(Player aPlayer){
         return aPlayer.getPlayerAction();
     }
