@@ -11,33 +11,32 @@ import java.util.Arrays;
  *
  * @author chris
  */
-enum Value {
-    ACE (11),
-    TWO (2),
-    THREE (3),
-    FOUR (4),
-    FIVE (5),
-    SIX (6),
-    SEVEN (7),
-    EIGHT (8),
-    NINE (9),
-    TEN (10),
-    JACK (10),
-    QUEEN (10),
-    KING (10);
-    
+enum Value
+{
+    ACE(11),
+    TWO(2),
+    THREE(3),
+    FOUR(4),
+    FIVE(5),
+    SIX(6),
+    SEVEN(7),
+    EIGHT(8),
+    NINE(9),
+    TEN(10),
+    JACK(10),
+    QUEEN(10),
+    KING(10);
+
     private final int numVal;
-    
-    private Value(int aNumVal){
+
+    private Value(int aNumVal)
+    {
         this.numVal = aNumVal;
     }
-    
-    int getNumVal(){
+
+    int getNumVal()
+    {
         return this.numVal;
     }
-    
-    @Override
-    public String toString(){
-        return Arrays.toString(Value.values());
-    }
+
 }

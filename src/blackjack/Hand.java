@@ -12,35 +12,45 @@ import java.util.List;
  *
  * @author chris
  */
-abstract class Hand
+class Hand
 {
-    private final int handValue;
+
+    private int handValue;
     private final List<Card> cards;
-    
-    Hand(){
+
+    Hand()
+    {
         this.handValue = 0;
         this.cards = new ArrayList<>();
     }
-    
-    void addToHand(Card aCard){
+
+    void addToHand(Card aCard)
+    {
         this.cards.add(aCard);
     }
-    
-    void removeFromHand(Card aCard){
+
+    void removeFromHand(Card aCard)
+    {
         this.cards.remove(aCard);
     }
-    List<Card> getCards(){
+
+    List<Card> getCards()
+    {
         return this.cards;
     }
-    
-    int getHandValue(){
+
+    int getHandValue()
+    {
+        this.setHandValue();
         return this.handValue;
     }
-    
-    void setHandValue(){
-        int value = 0;
-        for(Card each : this.cards){
-            value = value + each.getValue().getNumVal();
+
+    private void setHandValue()
+    {
+
+        for (Card each : this.cards)
+        {
+            this.handValue = this.handValue + each.getValue().getNumVal();
         }
     }
 }

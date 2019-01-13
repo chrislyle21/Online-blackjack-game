@@ -11,52 +11,66 @@ package blackjack;
  */
 public class Player
 {
+
     private String playerName;
     private double playerCredits;
     private Bet bet;
     private Action playerAction;
-    private PlayerHand playerHand;
-    
-    Player(String aName){
+    private Hand playerHand;
+
+    Player(String aName)
+    {
         this.playerName = aName;
+        this.playerHand = new Hand();
     }
-    
-    double getPlayerCredits(){
+
+    double getPlayerCredits()
+    {
         return this.playerCredits;
     }
-    
-    Action getPlayerAction(){
+
+    Action getPlayerAction()
+    {
         return this.playerAction;
     }
 
-    void setPlayerAction(Action anAction){
+    void setPlayerAction(Action anAction)
+    {
         this.playerAction = anAction;
     }
-    
-    Bet getBet(){
-        return this.bet; 
+
+    Bet getBet()
+    {
+        return this.bet;
     }
-    
-    void setBet(Bet aBet){
+
+    void setBet(Bet aBet)
+    {
         this.bet = aBet;
     }
-    
-    void addCredits(double credits){
+
+    void addCredits(double credits)
+    {
         this.playerCredits = (this.getPlayerCredits() + credits);
     }
-    
-    PlayerHand getPlayerHand(){
+
+    Hand getPlayerHand()
+    {
         return this.playerHand;
     }
-    
-    String getPlayerName(){
+
+    String getPlayerName()
+    {
         return this.playerName;
     }
-    public String toString(){
+
+    public String toString()
+    {
         return "Player name: " + this.getPlayerName() + "/nCredits: " + this.getPlayerCredits();
     }
-    
-    void deductCredits(double credits){
+
+    void deductCredits(double credits)
+    {
         this.playerCredits = (this.playerCredits - credits);
     }
 }
