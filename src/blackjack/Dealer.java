@@ -26,8 +26,12 @@ class Dealer
         this.dealerHand = new DealerHand();
         this.decks = new ArrayList<>();
     }
+    
+    List<Deck> getDecks(){
+        return this.decks;
+    }
 
-    private List<Deck> getDecks()
+    private List<Deck> addDecks()
     {
         for (int n = 0; n < 6; n++)
         {
@@ -53,25 +57,29 @@ class Dealer
 
     private List<Card> combineDecks()
     {
-        List<Card> listArr = new ArrayList<>();
+        List<Card> largeList = new ArrayList<>();
 
-        for (Deck eachDeck : this.getDecks())
+        for (Deck eachDeck : this.addDecks())
         {
             for (int n = 0; n < eachDeck.getDeck().length; n++)
             {
-                listArr.add(eachDeck.getCard(n));
+                largeList.add(eachDeck.getCard(n));
             }
 
         }
 
-        return listArr;
+        return largeList;
     }
 
-    List<Card> shuffleDecks()
+    private List<Card> shuffleDecks()
     {
         List<Card> shuffledList = this.combineDecks();
         Collections.shuffle(shuffledList);
         return shuffledList;
+    }
+    
+    List<Card> dealCards(){
+        return this.shuffleDecks();
     }
 
     void addToPlayerHand(Hand aHand, Card aCard)
