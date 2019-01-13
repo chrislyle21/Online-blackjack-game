@@ -42,7 +42,7 @@ public class BlackjackCoord
         return this.players;
     }
 
-    public Hand getPlayerHand(Player aPlayer)
+    public PlayerHand getPlayerHand(Player aPlayer)
     {
         return aPlayer.getPlayerHand();
     }
@@ -102,15 +102,16 @@ public class BlackjackCoord
 
     public void dealCards()
     {
-        this.decks = this.getDealer().shuffleDecks();
+        this.decks = this.getDealer().dealCards();
         int counter = 0;
+        
         for (Player each : this.getPlayers())
         {
             this.getDealer().addToPlayerHand(each.getPlayerHand(),
                     this.decks.get(counter));
             counter++;
         }
-        this.decks.remove(counter - 1);
+        
     }
 
     /**

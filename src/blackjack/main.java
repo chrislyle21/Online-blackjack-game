@@ -27,7 +27,7 @@ public class main
         bjCoord.dealCards();
         for (Player each : bjCoord.getPlayers())
         {
-            System.out.print(each.getPlayerHand().getCards().toString());
+            System.out.print(each.getPlayerHand().getCards().toString() +"\n");
         }
 
     }

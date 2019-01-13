@@ -16,12 +16,12 @@ public class Player
     private double playerCredits;
     private Bet bet;
     private Action playerAction;
-    private Hand playerHand;
+    private PlayerHand playerHand;
 
     Player(String aName)
     {
         this.playerName = aName;
-        this.playerHand = new Hand();
+        this.playerHand = new PlayerHand();
     }
 
     double getPlayerCredits()
@@ -54,7 +54,7 @@ public class Player
         this.playerCredits = (this.getPlayerCredits() + credits);
     }
 
-    Hand getPlayerHand()
+    PlayerHand getPlayerHand()
     {
         return this.playerHand;
     }
