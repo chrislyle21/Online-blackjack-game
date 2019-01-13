@@ -11,16 +11,25 @@ package blackjack;
  */
 public class main
 {
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args)
     {
-        
-    }
-    
+        BlackjackCoord bjCoord = new BlackjackCoord(5);
+        String[] nameArr = { "Joe Bloggs", "Chris Long", "Paul Short" };
+        for (int n = 0; n < nameArr.length; n++)
+        {
+            bjCoord.addPlayer(nameArr[n]);
+        }
 
-    
-    
+        bjCoord.dealCards();
+        for (Player each : bjCoord.getPlayers())
+        {
+            System.out.print(each.getPlayerHand().getCards().toString());
+        }
+
+    }
+
 }

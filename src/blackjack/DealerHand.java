@@ -11,7 +11,9 @@ package blackjack;
  */
 class DealerHand extends Hand
 {
-    DealerHand(){
+
+    DealerHand()
+    {
         super();
     }
 }

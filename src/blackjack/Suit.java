@@ -9,10 +9,11 @@ package blackjack;
  *
  * @author Chris Lyle
  */
-enum Suit {
+enum Suit
+{
     HEARTS,
     DIAMONDS,
     CLUBS,
     SPADES
-    
+
 }
