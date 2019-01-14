@@ -18,6 +18,7 @@ class Dealer
 {
 
     private List<Deck> decks;
+    private List<Card> combinedDecks;
     private Action dealerAction;
     private DealerHand dealerHand;
 
@@ -25,10 +26,7 @@ class Dealer
     {
         this.dealerHand = new DealerHand();
         this.decks = new ArrayList<>();
-    }
-    
-    List<Deck> getDecks(){
-        return this.decks;
+        this.combinedDecks = new ArrayList<>();
     }
 
     private List<Deck> addDecks()
@@ -37,6 +35,35 @@ class Dealer
         {
             this.decks.add(n, new Deck());
         }
+        
+        return this.decks;
+    }
+
+    private void combineDecks()
+    {
+
+        for (Deck eachDeck : this.addDecks())
+        {
+            for (int n = 0; n < eachDeck.getCards().length; n++)
+            {
+                this.combinedDecks.add(eachDeck.getCard(n));
+            }
+
+        }
+    }
+
+    void shuffleDecks()
+    {
+        this.combineDecks();
+        for (int n = 0; n < 4; n++)
+        {
+            Collections.shuffle(this.combinedDecks);
+           
+        }       
+    }
+
+    List<Deck> getDecks()
+    {
         return this.decks;
     }
 
@@ -45,7 +72,7 @@ class Dealer
         return this.dealerAction;
     }
 
-    void setAction(Action anAction)
+    void setDealerAction(Action anAction)
     {
         this.dealerAction = anAction;
     }
@@ -55,36 +82,20 @@ class Dealer
         return this.dealerHand;
     }
 
-    private List<Card> combineDecks()
+    Card dealCards(Player aPlayer, int index)
     {
-        List<Card> largeList = new ArrayList<>();
-
-        for (Deck eachDeck : this.addDecks())
-        {
-            for (int n = 0; n < eachDeck.getDeck().length; n++)
-            {
-                largeList.add(eachDeck.getCard(n));
-            }
-
-        }
-
-        return largeList;
-    }
-
-    private List<Card> shuffleDecks()
-    {
-        List<Card> shuffledList = this.combineDecks();
-        Collections.shuffle(shuffledList);
-        return shuffledList;
-    }
-    
-    List<Card> dealCards(){
-        return this.shuffleDecks();
+        aPlayer.getPlayerHand().addToHand(this.combinedDecks.get(index));
+        return this.combinedDecks.remove(index);
     }
 
     void addToPlayerHand(Hand aHand, Card aCard)
     {
         aHand.addToHand(aCard);
+    }
+
+    void resetDealerHand()
+    {
+        this.getDealerHand().getCards().clear();
     }
 
     @Override

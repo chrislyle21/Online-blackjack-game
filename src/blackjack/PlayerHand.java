@@ -11,9 +11,10 @@ package blackjack;
  */
 public class PlayerHand extends Hand
 {
+
     PlayerHand()
     {
         super();
     }
-    
+
 }

@@ -7,8 +7,8 @@ package blackjack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.List;
 import java.util.Map;
 
@@ -19,17 +19,16 @@ import java.util.Map;
 public class BlackjackCoord
 {
 
+    private int counter;
     private final double minimumBet;
     private final Dealer dealer;
-    private final Set<Player> players;
-    private List<Card> decks;
+    private final List<Player> players;
 
     public BlackjackCoord(double aMinBet)
     {
         this.minimumBet = aMinBet;
         this.dealer = new Dealer();
-        this.players = new HashSet<>();
-        this.decks = new ArrayList<>();
+        this.players = new ArrayList<>();
     }
 
     public Dealer getDealer()
@@ -37,7 +36,7 @@ public class BlackjackCoord
         return this.dealer;
     }
 
-    public Set<Player> getPlayers()
+    public List<Player> getPlayers()
     {
         return this.players;
     }
@@ -45,11 +44,6 @@ public class BlackjackCoord
     public PlayerHand getPlayerHand(Player aPlayer)
     {
         return aPlayer.getPlayerHand();
-    }
-
-    public int getPlayerHandSize(Player aPlayer)
-    {
-        return aPlayer.getPlayerHand().getCards().size();
     }
 
     public void addPlayer(String aName)
@@ -63,9 +57,9 @@ public class BlackjackCoord
      *
      * @return
      */
-    public Map<Dealer, Set<Player>> getDealerAndPlayers()
+    public Map<Dealer, List<Player>> getDealerAndPlayers()
     {
-        Map<Dealer, Set<Player>> dealersAndPlayers = new HashMap<>();
+        Map<Dealer, List<Player>> dealersAndPlayers = new HashMap<>();
         dealersAndPlayers.put(this.getDealer(), this.getPlayers());
         return dealersAndPlayers;
     }
@@ -102,16 +96,14 @@ public class BlackjackCoord
 
     public void dealCards()
     {
-        this.decks = this.getDealer().dealCards();
-        int counter = 0;
-        
+
         for (Player each : this.getPlayers())
         {
-            this.getDealer().addToPlayerHand(each.getPlayerHand(),
-                    this.decks.get(counter));
-            counter++;
+            each.getPlayerHand().setHandValue(this.getDealer().dealCards(each,
+                    this.counter).getValue().getNumVal());
+            this.counter++;
         }
-        
+
     }
 
     /**
@@ -143,7 +135,7 @@ public class BlackjackCoord
     public void setDealerAction(String anAction)
     {
         Action action = Action.valueOf(anAction);
-        this.getDealer().setAction(action);
+        this.getDealer().setDealerAction(action);
     }
 
     public void setPlayerAction(Player aPlayer, String anAction)

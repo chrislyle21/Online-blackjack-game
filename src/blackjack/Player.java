@@ -24,6 +24,16 @@ public class Player
         this.playerHand = new PlayerHand();
     }
 
+    PlayerHand getPlayerHand()
+    {
+        return this.playerHand;
+    }
+
+    String getPlayerName()
+    {
+        return this.playerName;
+    }
+
     double getPlayerCredits()
     {
         return this.playerCredits;
@@ -54,23 +64,19 @@ public class Player
         this.playerCredits = (this.getPlayerCredits() + credits);
     }
 
-    PlayerHand getPlayerHand()
-    {
-        return this.playerHand;
-    }
-
-    String getPlayerName()
-    {
-        return this.playerName;
-    }
-
-    public String toString()
-    {
-        return "Player name: " + this.getPlayerName() + "/nCredits: " + this.getPlayerCredits();
-    }
-
     void deductCredits(double credits)
     {
         this.playerCredits = (this.playerCredits - credits);
+    }
+
+    void resetPlayerHand()
+    {
+        this.getPlayerHand().getCards().clear();
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Player name: " + this.getPlayerName() + "/nCredits: " + this.getPlayerCredits();
     }
 }

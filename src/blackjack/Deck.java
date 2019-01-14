@@ -20,6 +20,16 @@ final class Deck
         this.generateDeck();
     }
 
+    Card[] getCards()
+    {
+        return this.cardArr;
+    }
+
+    Card getCard(int index)
+    {
+        return cardArr[index];
+    }
+
     void generateDeck()
     {
         int counter = 0;
@@ -35,25 +45,10 @@ final class Deck
 
     }
 
-    Card[] getCards()
-    {
-        return cardArr;
-    }
-
-    Card[] getDeck()
-    {
-        return this.cardArr;
-    }
-
-    Card getCard(int index)
-    {
-        return cardArr[index];
-    }
-
     @Override
     public String toString()
     {
-        return "Deck size is: " + this.getDeck().length;
+        return "Deck size is: " + this.getCards().length;
     }
 
 }
