@@ -15,10 +15,11 @@ import org.junit.Test;
  */
 public class TestBlackjackCoord
 {
+    BlackjackCoord bjCoord = new BlackjackCoord(5);
+    String[] nameArr = {"Joe Bloggs", "Chris Long", "Paul Short"};
+            
     @Test
     public void testAddPlayer(){
-        BlackjackCoord bjCoord = new BlackjackCoord(5);
-        String[] nameArr = {"Joe Bloggs", "Chris Long", "Paul Short"};
         for(int n = 0; n < nameArr.length; n++){
             bjCoord.addPlayer(nameArr[n]);
         }
@@ -30,5 +31,24 @@ public class TestBlackjackCoord
         catch(Exception e){
             assert false: "No exception should be thrown\nError: " + e.toString();
         }       
-    }    
+    }
+
+    @Test
+    public void testDealCards(){
+        for(int n = 0; n < nameArr.length; n++){
+            bjCoord.addPlayer(nameArr[n]);
+        }
+       
+        bjCoord.dealCards();
+        
+        try{
+            for(Player each : bjCoord.getPlayers()){
+                assert bjCoord.getPlayerHand(each).getHandSize(each) == 1: 
+                        "Each hand sould contain only 1 Card object";
+            }
+        }
+        catch(Exception e){
+            assert false: "No exception should be thrown" + e.toString();
+        }
+    }
 }
