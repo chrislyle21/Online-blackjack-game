@@ -24,6 +24,22 @@ abstract class Hand
         this.cards = new ArrayList<>();
     }
 
+    void setHandValue(int aVal)
+    {
+        this.handValue = this.getHandValue() + aVal;
+
+    }
+
+    int getHandValue()
+    {
+        return this.handValue;
+    }
+
+    List<Card> getCards()
+    {
+        return this.cards;
+    }
+
     void addToHand(Card aCard)
     {
         this.cards.add(aCard);
@@ -34,23 +50,8 @@ abstract class Hand
         this.cards.remove(aCard);
     }
 
-    List<Card> getCards()
+    public int getHandSize(Player aPlayer)
     {
-        return this.cards;
-    }
-
-    int getHandValue()
-    {
-        this.setHandValue();
-        return this.handValue;
-    }
-
-    private void setHandValue()
-    {
-
-        for (Card each : this.cards)
-        {
-            this.handValue = this.handValue + each.getValue().getNumVal();
-        }
+        return this.getCards().size();
     }
 }

@@ -18,18 +18,24 @@ public class main
     public static void main(String[] args)
     {
         BlackjackCoord bjCoord = new BlackjackCoord(5);
-        String[] nameArr = { "Joe Bloggs", "Chris Long", "Paul Short" };
+        String[] nameArr =
+        {
+            "Joe Bloggs", "Chris Long", "Paul Short"
+        };
         for (int n = 0; n < nameArr.length; n++)
         {
             bjCoord.addPlayer(nameArr[n]);
         }
-
+        bjCoord.getDealer().shuffleDecks();
+       
+        bjCoord.dealCards();
         bjCoord.dealCards();
         for (Player each : bjCoord.getPlayers())
         {
-            System.out.print(each.getPlayerHand().getCards().toString() +"\n");
+            System.out.print(each.getPlayerHand().getCards().toString() + "\n");
+            System.out.print(each.getPlayerName() + ": hand = " + each.getPlayerHand().getHandValue() + "\n");
         }
-
+        
     }
 
 }
