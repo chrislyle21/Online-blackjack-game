@@ -8,7 +8,7 @@
     <body>
         <h1>Requirements document</h1>
         <h2><u>Use cases</h2>
-        <div style="color: blue; font-family: verdana; font-size: 300%;}">
+        <div style="color: yellow;}">
                 <ol type="A">
                     <li> <b>Add player</b>, player enters name, is allocated 1000 credits player is added to the game and player name is displayed.</li>
                     <li><b>Place bets</b>, each player places their bets in turn, working clockwise from the dealers left, the bet must equal to or greater than the bet minimum.  The bet is acknowledged.</li>
