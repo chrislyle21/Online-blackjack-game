@@ -40,4 +40,51 @@
     </li>
     </ol>
     <h2><b>Acceptance tests</b></h2>
+    <ol type="A">
+        <li>Test that a new player is created with the correct name and 1000 credits.</li>
+        <li>Test that a bet cannot be placed which is lower than the minimum bet.
+            <ul type="disc">
+                <li>Test that a bet can be placed which is equal to the minimum bet.</li>
+                <li>Test that a bet can be placed which is more than the minimum bet.</li>
+            </ul>
+        </li>
+        <li>Test that 6 decks are created with the correct cards in each deck.
+            <ul type="disc">
+                <li>Test that all cards from each deck shuffle together.</li>
+                <li>Test that cards are dealt in the correct orde.r</li>
+            </ul>
+        </li>
+        <li>Test that a player can add insurance if the dealer has an Ace.
+            <ul type="disc">
+                <li>Test that a player cannot add insurance if the dealer does not have an Ace.</li>
+            </ul>
+        </li>
+        <li>Test player decisions if the players hand is less than 21.
+            <ul type="disc">
+                <li>Test that hit gives a new card to a player.</li>
+                <li>Test that int adds at least half of and up to an equal amount of the bet if the player does not have a blackjack.
+                </li>
+                <li>Test that stand confirms the players hand score.</li>
+                <li>Test that a player can surrender and lose half their bet.</li>
+                <li>Test that a player can split their hand if there are two cards dealt to the player are of the same value.</li>
+                <li>Test that a player cannot spilt their hand if 2 cards dealt to the player are not of the same value.</li>
+                <li>Test that player goes bust if a players hand score is over 21.</li>
+            </ul>
+        </li>
+        <li>Test dealer decisions,
+            <ul type="disc">
+                <li>Test that a dealer hits if a dealers hand score is 16 or less.</li>
+                <li>Test that a dealer stands if a dealers hand score is 17 or more.</li>
+                <li>Test that a dealer goes bust if a dealers hand score is over 21.</li>
+            </ul>
+        </li>
+        <li>Test that 1 : 1 is paid on a split pair.
+            <ul type="disc">
+                <liTest that 3 : 2 is paid on a player blackjack.></li>
+                <li>Test that an insurance bet is paid at 2 : 1.</li>
+                <li>Test that a winning bet that is not a blackjack is paid at 1 : 1.></li>
+                <li>Test that a bet is not paid out if a player loses.</li>
+            </ul>
+        </li>
+    </ol>
    
