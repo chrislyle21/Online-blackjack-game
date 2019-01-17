@@ -29,5 +29,15 @@
             <li>Should the dealer not bust, the dealers hand is compared with each players hand.  The dealer collects from those players holding weaker hands and pays those holding stronger hands. Should the point total of a players hand be equal to the dealers, the bet is a “standoff” (a tie), and no money exchanges hands.</li>
         </ul>    
     </li>
-</ol>
+    <li><b>Pay out</b>, Split pairs pay 1 to 1 (even money),
+        <ul type="disc">
+            <li>If the dealer or player hand does not have a blackjack the payout is 1 to 1. </li>
+            <li>If a players hand has a blackjack it is paid at 3 to 2. </li>
+            <li><If there was an insurance bet and the dealers hand has 21 or blackjack the payout is 2 to 1, otherwise bet paid as normal.</li>
+            <li>Winnings are added, loses are deducted and player/dealer hands are cleared. </li>
+            <li>Players are then asked if they want to play again.</li>
+        </ul>
+    </li>
+    </ol>
+    <h2><b>Acceptance tests</b></h2>
    
