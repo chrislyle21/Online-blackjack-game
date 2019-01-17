@@ -33,7 +33,7 @@
         <ul type="disc">
             <li>If the dealer or player hand does not have a blackjack the payout is 1 to 1. </li>
             <li>If a players hand has a blackjack it is paid at 3 to 2. </li>
-            <li><If there was an insurance bet and the dealers hand has 21 or blackjack the payout is 2 to 1, otherwise bet paid as normal.</li>
+            <li>If there was an insurance bet and the dealers hand has 21 or blackjack the payout is 2 to 1, otherwise bet paid as normal.</li>
             <li>Winnings are added, loses are deducted and player/dealer hands are cleared. </li>
             <li>Players are then asked if they want to play again.</li>
         </ul>
