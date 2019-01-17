@@ -21,12 +21,12 @@
         </ul>
     </li>
     <li><b>Dealer action</b>, all players must have completed their hands before the dealer can play theirs.
-        <ul type="disc" background-color="yellow">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <ul type="disc">
+            <li>The dealer deals their second card face up.</li>
+            <li>If the dealers hand is equal to or less than 16 the dealer must hit.</li>
+            <li>If the dealers hand is equal to or more than 17 the dealer must stand. </li>
+            <li>Otherwise if the dealer is greater than 21 the dealer is bust. </li>
+            <li>Should the dealer not bust, the dealers hand is compared with each players hand.  The dealer collects from those players holding weaker hands and pays those holding stronger hands. Should the point total of a players hand be equal to the dealers, the bet is a “standoff” (a tie), and no money exchanges hands.</li>
         </ul>    
     </li>
 </ol>
