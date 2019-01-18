@@ -7,7 +7,6 @@ package blackjack;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -17,7 +16,7 @@ import java.util.Collections;
 class Dealer
 {
 
-    private List<Deck> decks;
+    private final List<Deck> decks;
     private List<Card> combinedDecks;
     private Action dealerAction;
     private DealerHand dealerHand;
