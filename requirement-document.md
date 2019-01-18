@@ -33,7 +33,7 @@
         <ul type="disc">
             <li>If the dealer or player hand does not have a blackjack the payout is 1 to 1. </li>
             <li>If a players hand has a blackjack it is paid at 3 to 2. </li>
-            <li>If there was an insurance bet and the dealers hand has 21 or blackjack the payout is 2 to 1, otherwise bet paid as normal.</li>
+            <li>If there was an insurance bet and the dealers hand has 21 or blackjack the payout is 2 to 1, otherwise bet paid as                   normal.</li>
             <li>Winnings are added, loses are deducted and player/dealer hands are cleared. </li>
             <li>Players are then asked if they want to play again.</li>
         </ul>
@@ -89,5 +89,91 @@
     </ol>
     <h1>Initial structural model</h1>
     <h2>Class diagram</h2>
-    <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-initial-structural.jpg" height="600" width="800"/>
-   
+    <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-initial-structural.jpg"                 height="600" width="800"/>
+<h2>Class descriptions (conceptual)</h2>
+<p>
+    <b>Class</b><br />
+    <code>BlackjackCoord</code> - The game coordinator<br />
+    <b>Attributes</b><br />
+    <code>MinimumBet</code> - The minimum bet amount for the game
+</p>
+<p>
+    <b>Class</b><br />
+    <code>Player</code> - A player in the game<br />
+    <b>Attributes</b><br />
+    <code>playerName</code> - The name of the player<br />
+    <code>credits</code> - A players credits
+</p>
+<p>
+    <b>Class</b><br />
+    <code>Dealer</code> - The dealer in a game<br />
+    <b>Attributes</b><br />
+    None
+</p>
+<p>
+    <b>Class</b><br />
+    <code>Deck</code> - The decks used in a game<br />
+    <b>Attributes</b><br />
+    None
+</p>
+<p>
+    <b>Class</b><br />
+    <code>Card</code> - The cards used is each deck<br />
+    <b>Attributes</b><br />
+    <code>suit</code> - The suit of the card<br />
+    <code>value</code> - The value of the card
+</p>
+<p>
+    <b>Class</b><br />
+    <code>Bet</code> - Bet used to place wagers in a game<br />
+    <b>Attributes</b><br />
+    <code>betAmount</code> - The amount of credits placed in a bet
+</p>
+<p>
+    <b>Class</b><br />
+    <code>Hand</code> - The hand that has been dealt.  Generalises <code>PlayerHand</code> and <code>DealerHand</code><br />
+    <b>Attributes</b><br />
+    <code>handScore</code> - The score of the hand
+</p>
+<p>
+    <b>Class</b><br />
+    <code>PlayerHand</code> - The players hand.  Specialises <code>Hand</code><br />
+    <b>Attributes</b><br />
+    <code>handScore</code> - The score of the hand
+</p>
+<p>
+    <b>Class</b><br />
+    <code>DealerHand</code> - The dealers hand.  Specialises <code>Hand</code><br />
+    <b>Attributes</b><br />
+    <code>handScore</code> - The score of the hand
+</p>
+<p>
+    <b>Enum</b><br />
+    <code>Action</code> - Action used for decisions<br />
+    <b>Values</b><br />
+    <code>HIT, BUST, STAND, INSURANCE, SPLIT, DOUBLE, SURRENDER</code>
+</p>
+<p>
+    <b>Enum</b><br />
+    <code>Suit</code> - The suit of a card<br />
+    <b>Values</b><br />
+    <code>HEARTS, DIAMONDS, CLUBS, SPADES</code>
+</p>
+<p>
+    <b>Enum</b><br />
+    <code>Value</code> - The value of the card<br />
+    <b>Values</b><br />
+    <code>ACE(11), TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7), EIGHT(8), NINE(9), TEN(10), JACK(10), QUEEN(10), KING(10)</code><br />
+    <b>Attributes</b><br />
+    <code>numVal</code> - The numerical value of <code>Value</code>
+</p>
+<h2>Invariants</h2>
+<p>
+    If a PlayerHand object aPlayerHand is equal to or greater than a DealerHand object aDealerHand, then aPlayerHand is linked to a Bet     object aBet via wins association.
+</p>
+<p>When aBet is placed, the attribute betAmount of aBet must be equal to or greater than the attribute minimumBet of BlackjackCoord     object aBlackjackCoord.
+</p>
+<p>
+    If aDealerHand or aPlayerHand attribute handScore is greater than 21 the corresponding Hand object aHand loses.
+    No two Player objects in a single game may have the same playerName attribute.
+</p>
