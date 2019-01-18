@@ -179,6 +179,6 @@
 </p>
 <h1>Implementation model</h1>
 <h2>Class diagram</h2>
-<img src="" />
+<img src="https://github.com/chrislyle21/blackjack_core_objects/blob/chrislyle21-patch-1/images/class-diagram-implementation.jpg" height="600" width="800 />
 
 
