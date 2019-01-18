@@ -177,3 +177,8 @@
     If aDealerHand or aPlayerHand attribute handScore is greater than 21 the corresponding Hand object aHand loses.
     No two Player objects in a single game may have the same playerName attribute.
 </p>
+<h1>Implementation model</h1>
+<h2>Class diagram</h2>
+<img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-implementation.jpg" height="600" width="800" />
+
+
