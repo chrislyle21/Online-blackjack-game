@@ -89,5 +89,5 @@
     </ol>
     <h1>Initial structural model</h1>
     <h2>Class diagram</h2>
-    <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-initial-structural.jpg" height="800" width="800"/>
+    <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-initial-structural.jpg" height="600" width="600"/>
    
