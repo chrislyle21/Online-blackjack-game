@@ -87,4 +87,7 @@
             </ul>
         </li>
     </ol>
+    <h1>Initial structural model</h1>
+    <h2>Class diagram</h2>
+    
    
