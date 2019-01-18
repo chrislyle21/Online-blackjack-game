@@ -13,15 +13,15 @@ class Bet
 {
 
     private final Player player;
-    private double betAmount;
+    private int betAmount;
 
-    Bet(Player aPlayer, double anAmount)
+    Bet(Player aPlayer, int anAmount)
     {
         this.player = aPlayer;
         this.betAmount = anAmount;
     }
 
-    double getBetAmount()
+    int getBetAmount()
     {
         return this.betAmount;
     }

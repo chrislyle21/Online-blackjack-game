@@ -20,11 +20,11 @@ public class BlackjackCoord
 {
 
     private int counter;
-    private final double minimumBet;
+    private final int minimumBet;
     private final Dealer dealer;
     private final List<Player> players;
 
-    public BlackjackCoord(double aMinBet)
+    public BlackjackCoord(int aMinBet)
     {
         this.minimumBet = aMinBet;
         this.dealer = new Dealer();
@@ -80,14 +80,14 @@ public class BlackjackCoord
         return bets;
     }
 
-    public boolean placeBet(Player aPlayer, double bet)
+    public boolean placeBet(Player aPlayer, int aBet)
     {
         boolean result = false;
 
-        if ((aPlayer.getPlayerCredits() - bet) > 0)
+        if ((aBet >= minimumBet) && ((aPlayer.getPlayerCredits() - aBet) > 0))
         {
-            aPlayer.setBet(new Bet(aPlayer, bet));
-            aPlayer.deductCredits(bet);
+            aPlayer.setBet(new Bet(aPlayer, aBet));
+            aPlayer.deductCredits(aBet);
             result = true;
         }
 
@@ -144,7 +144,7 @@ public class BlackjackCoord
         aPlayer.setPlayerAction(action);
     }
 
-    public double getMinimumBet()
+    public int getMinimumBet()
     {
         return this.minimumBet;
     }

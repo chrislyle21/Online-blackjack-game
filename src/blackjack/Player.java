@@ -13,7 +13,7 @@ public class Player
 {
 
     private String playerName;
-    private double playerCredits;
+    private int playerCredits;
     private Bet bet;
     private Action playerAction;
     private PlayerHand playerHand;
@@ -34,7 +34,7 @@ public class Player
         return this.playerName;
     }
 
-    double getPlayerCredits()
+    int getPlayerCredits()
     {
         return this.playerCredits;
     }
@@ -59,14 +59,24 @@ public class Player
         this.bet = aBet;
     }
 
-    void addCredits(double credits)
+    boolean addCredits(int credits)
     {
-        this.playerCredits = (this.getPlayerCredits() + credits);
+        boolean result = false;
+        if (credits > 0)
+        {
+            this.playerCredits = (this.getPlayerCredits() + credits);
+            result = true;
+        }
+        return result;
     }
 
-    void deductCredits(double credits)
+    int deductCredits(int credits)
     {
-        this.playerCredits = (this.playerCredits - credits);
+        if ((this.getPlayerCredits() - credits) > 0)
+        {
+            this.playerCredits = (this.playerCredits - credits);
+        }
+        return this.getPlayerCredits();
     }
 
     void resetPlayerHand()
