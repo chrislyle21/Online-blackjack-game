@@ -1,6 +1,6 @@
 <h1>Requirements document</h1>
 
-<h2><u>Use cases</h2>
+<h2>Use cases</h2>
 <ol type="A">
     <li> <b>Add player</b>, player enters name, is allocated 1000 credits player is added to the game and player name is displayed.</li>
     <li><b>Place bets</b>, each player places their bets in turn, working clockwise from the dealers left, the bet must equal to or greater than the bet minimum.  The bet is acknowledged.</li>
@@ -80,7 +80,7 @@
         </li>
         <li>Test that 1 : 1 is paid on a split pair.
             <ul type="disc">
-                <liTest that 3 : 2 is paid on a player blackjack.></li>
+                <li>Test that 3 : 2 is paid on a player blackjack.</li>
                 <li>Test that an insurance bet is paid at 2 : 1.</li>
                 <li>Test that a winning bet that is not a blackjack is paid at 1 : 1.></li>
                 <li>Test that a bet is not paid out if a player loses.</li>
