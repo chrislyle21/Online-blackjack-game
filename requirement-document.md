@@ -87,7 +87,7 @@
             </ul>
         </li>
     </ol>
-    <a id="ism"><h1>Initial structural model</h1><\a>
+    <a id="ism"><h1>Initial structural model</h1></a>
     <h2>Class diagram</h2>
     <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-initial-structural.jpg"                 height="600" width="800"/>
 <h2>Class descriptions (conceptual)</h2>
