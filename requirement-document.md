@@ -183,11 +183,11 @@
 <h2>Detailed class descriptions</h2>
 <p>
     <b>Class</b><br />
-    <code>BlackjackCoord</code>
-    <ul>The game coordinator</ul>
+    <code>BlackjackCoord</code> - The game coordinator<br />
+    <br />
     <b>Attributes</b><br />
-    <code>MinimumBet</code>
-    <ul>The minimum bet amount for the game</ul>
+    <code>MinimumBet</code> - The minimum bet amount for the game<br />
+    <br />
     <b>Links</b><br />
     <code>private Dealer dealer</code>
     <ul>References the linked <code>Dealer</code> object</ul>
