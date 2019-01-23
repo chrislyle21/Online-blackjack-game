@@ -196,12 +196,11 @@
     <code>public Map&lt;Dealer, List&lt;Player&gt;&gt; getDealerAndPlayers()</code>
     <ul><b>Post-condition</b>: returns a map with the <code>Dealer</code> object as the key and a list of <code>Player</code> objects as the value</ul>
     <code>public Set&lt;Bet&gt; getBets()</code><br />
-    <b>Post-condition</b>: returns a set of <code>Be</code>t objects<br />
+    <ul><b>Post-condition</b>: returns a set of <code>Be</code>t objects</ul>
     <code>public Bet getPlayerBet(Player aPlayer)</code><br />
-    <b>Post-condition</b>: returns the <code>Bet</code> object linked to <code>aPlayer</code><br />
+    <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to <code>aPlayer</code></ul>
     <code>public PlayerAction getPlayerAction(Player aPlayer)</code><br />
-    <b>Post-condition</b>: returns the <code>PlayerAction</code> object linked to <code>aPlayer</code><br />
+    <ul><b>Post-condition</b>: returns the <code>PlayerAction</code> object linked to <code>aPlayer</code></ul>
     <code>public PlayerAction getPlayerHand(Player aPlayer)</code><br />
-    <b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to <code>aPlayer</code><br />
-
+    <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to <code>aPlayer</code></ul>
 </p>
