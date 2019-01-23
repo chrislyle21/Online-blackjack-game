@@ -221,6 +221,13 @@
     <code>public void setPlayerAction(Player aPlayer, Action anAction)</code>
     <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code></ul>
     <code>public boolean placeBet(Player aPlayer, int aBet)</code>
-    <ul><b>Pre-condition</b>: <code>aBet</code> must be equal to, or greater than the <code>BlackjackCoord</code> attribute <code>minimumBet</code><br />
-    <code>aPlayer</code> attribute value <code>playerCredits</code> must be equal to, or greater than <code>aBet</code></ul>.   
+    <ul><b>Pre-condition</b>: <code>aBet</code> must be equal to, or greater than the <code>BlackjackCoord</code> attribute <code>minimumBet</code>.<br />
+    <code>aPlayer</code> attribute value <code>playerCredits</code> must be equal to, or greater than <code>aBet</code>.   
+    <b>Post-condition</b>: creates a new <code>Bet</code> object with the attribute int value <code>bet</code> and links to <code>aPlayer</code>, then returns <code>true</code>.  Otherwise returns <code>false</code></ul>
+    <code>public void dealCards()</code>
+    <ul><b>Post-condition</b>: the 6 <code>Dec</code> objects are combined and shuffled.  Each <code>Player</code> object has a <code>Card</code> object added to the linked <code>PlayerHand</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects.<br />
+A <code>Card</code> object is added to the <code>DealerHand</code> object which is linked to the <code>Dealer</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects
+</ul>
+<code>public int getMinimumBet()</code>
+<ul><b>Post-condition</b>: returns the int value <code>minimumBet</code>
 </p>
