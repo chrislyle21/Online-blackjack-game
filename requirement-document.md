@@ -200,11 +200,21 @@
     <code>public Map&lt;Dealer, List&lt;Player&gt;&gt; getDealerAndPlayers()</code>
     <ul><b>Post-condition</b>: returns a map with the <code>Dealer</code> object as the key and a list of <code>Player</code> objects as the value</ul>
     <code>public Set&lt;Bet&gt; getBets()</code><br />
-    <ul><b>Post-condition</b>: returns a set of <code>Be</code>t objects</ul>
+    <ul><b>Post-condition</b>: returns a set of <code>Bet</code> objects</ul>
     <code>public Bet getPlayerBet(Player aPlayer)</code><br />
     <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to <code>aPlayer</code></ul>
     <code>public PlayerAction getPlayerAction(Player aPlayer)</code><br />
     <ul><b>Post-condition</b>: returns the <code>PlayerAction</code> object linked to <code>aPlayer</code></ul>
     <code>public PlayerAction getPlayerHand(Player aPlayer)</code><br />
     <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to <code>aPlayer</code></ul>
+    <code>public Action getDealerAction()</code>
+    <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to <code>aDealer</code></ul>
+    <code>public List&lt:Player&gt: getPlayers()</code>
+    <ul><b>Post-condition</b>: returns a list of <code>Player</code> objects</ul>
+    <code>public Dealer getDealer()</code>
+    <ul><b>Post-condition</b>: returns the <code>Dealer </code> object linked to the <code>BlackjackCoord</code> object</ul>
+    <code>public Dealer getDealer()</code>
+    <ul><b>Post-condition</b>: a new <code>Player</code> object is created with the string attribute <code>playerName</code> set to <code>aName</code><br />
+    The receiver is added to the <code>BlackjackCoord</code> attribute <code>players</code></ul>
+
 </p>
