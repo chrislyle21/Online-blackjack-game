@@ -217,8 +217,8 @@
     <ul><b>Post-condition</b>: a new <code>Player</code> object is created with the string attribute <code>playerName</code> set to <code>aName</code><br />
     The receiver is added to the <code>BlackjackCoord</code> attribute <code>players</code></ul>
     <code>public void setDealerAction(String anAction)</code>
-        <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the <code>Dealer</code> to <code>anAction</code><br />
+        <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the <code>Dealer</code> to <code>anAction</code></ul><br />
     <code>public void setPlayerAction(Player aPlayer, Action anAction)</code>
-        <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code><br />
+        <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code></ul><br />
 
 </p>
