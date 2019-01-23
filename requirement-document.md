@@ -180,5 +180,15 @@
 <a id="im"><h1>Implementation model</h1></a>
 <h2>Class diagram</h2>
 <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-implementation.jpg" height="600" width="800" />
-
-
+<h2>Detailed class descriptions</h2>
+<p>
+    <b>Class</b><br />
+    <code>BlackjackCoord</code> - The game coordinator<br />
+    <b>Attributes</b><br />
+    <code>MinimumBet</code> - The minimum bet amount for the game<br />
+    <b>Links</b><br />
+    <code>private Dealer dealer</code> - References the linked Dealer object<br />
+    <b>Protocol</b><br />
+    <code>public Map<Dealer, List<Player>> getDealerAndPlayers()</code><br />
+    <b>Post-condition</b>: returns a map with the Dealer object as the key and a list of Player objects as the value
+</p>
