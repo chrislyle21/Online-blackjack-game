@@ -183,10 +183,10 @@
 <a id="dcd"><h2>Detailed class descriptions</h2></a>
 <p>
     <b>Class</b><br />
-    <code>BlackjackCoord</code> - The game coordinator
+    <code>BlackjackCoord</code> - The game coordinator<br />
     <br />
     <b>Attributes</b><br />
-    <code>MinimumBet</code> - The minimum bet amount for the game
+    <code>MinimumBet</code> - The minimum bet amount for the game<br />
     <br />
     <b>Links</b><br />
     <code>private Dealer dealer</code>
