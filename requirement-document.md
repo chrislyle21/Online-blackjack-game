@@ -187,11 +187,13 @@
     <b>Attributes</b><br />
     <code>MinimumBet</code> - The minimum bet amount for the game<br />
     <b>Links</b><br />
-    <code>private Dealer dealer</code> - References the linked Dealer object<br />
-    <code>private List&lt;Player&gt; players</code> - References the collection of linked Player objects<br />
+    <code>private Dealer dealer</code><br />
+    <ul>References the linked <code>Dealer</code> object</ul>
+    <code>private List&lt;Player&gt; players</code><br />
+    <ul>References the collection of linked <code>Player</code> objects</ul>
     <b>Constructor</b><br />
     <code>public BlackjackCoord(int aMinBet)</code><br />
-    <b>Post-condition</b>: initialises a new <code>BlackjackCoord</code> object with the given attributes and initialises a new             <code>Dealer</code> object<br />
+    <ul><b>Post-condition</b>: initialises a new <code>BlackjackCoord</code> object with the given attributes and initialises a new             <code>Dealer</code> object</ul>
     <b>Protocol</b><br />
     <code>public Map&lt;Dealer, List&lt;Player&gt;&gt; getDealerAndPlayers()</code>
     <ul><b>Post-condition</b>: returns a map with the <code>Dealer</code> object as the key and a list of <code>Player</code> objects as the value</ul>
