@@ -180,5 +180,56 @@
 <a id="im"><h1>Implementation model</h1></a>
 <h2>Class diagram</h2>
 <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-implementation.jpg" height="600" width="800" />
-
-
+<a id="dcd"><h2>Detailed class descriptions</h2></a>
+<p>
+    <b>Class</b><br />
+    <code>BlackjackCoord</code> - The game coordinator<br />
+    <br />
+    <b>Attributes</b><br />
+    <code>MinimumBet</code> - The minimum bet amount for the game<br />
+    <br />
+    <b>Links</b><br />
+    <code>private Dealer dealer</code>
+    <ul>References the linked <code>Dealer</code> object</ul>
+    <code>private List&lt;Player&gt; players</code>
+    <ul>References the collection of linked <code>Player</code> objects</ul>
+    <br />
+    <b>Constructor</b><br />
+    <code>public BlackjackCoord(int aMinBet)</code>
+    <ul><b>Post-condition</b>: initialises a new <code>BlackjackCoord</code> object with the given attributes and initialises a new             <code>Dealer</code> object</ul>
+    <br />
+    <b>Protocol</b><br />
+    <code>public Map&lt;Dealer, List&lt;Player&gt;&gt; getDealerAndPlayers()</code>
+    <ul><b>Post-condition</b>: returns a map with the <code>Dealer</code> object as the key and a list of <code>Player</code> objects as the value</ul>
+    <code>public Set&lt;Bet&gt; getBets()</code>
+    <ul><b>Post-condition</b>: returns a set of <code>Bet</code> objects</ul>
+    <code>public Bet getPlayerBet(Player aPlayer)</code>
+    <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to <code>aPlayer</code></ul>
+    <code>public PlayerAction getPlayerAction(Player aPlayer)</code>
+    <ul><b>Post-condition</b>: returns the <code>PlayerAction</code> object linked to <code>aPlayer</code></ul>
+    <code>public PlayerAction getPlayerHand(Player aPlayer)</code>
+    <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to <code>aPlayer</code></ul>
+    <code>public Action getDealerAction()</code>
+    <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to <code>aDealer</code></ul>
+    <code>public List&lt;Player&gt; getPlayers()</code>
+    <ul><b>Post-condition</b>: returns a list of <code>Player</code> objects</ul>
+    <code>public Dealer getDealer()</code>
+    <ul><b>Post-condition</b>: returns the <code>Dealer </code> object linked to the <code>BlackjackCoord</code> object</ul>
+    <code>public void addPlayer(String aName)</code>
+    <ul><b>Post-condition</b>: a new <code>Player</code> object is created with the string attribute <code>playerName</code> set to <code>aName</code><br />
+    The receiver is added to the <code>BlackjackCoord</code> attribute <code>players</code></ul>
+    <code>public void setDealerAction(String anAction)</code>
+    <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the <code>Dealer</code> to <code>anAction</code></ul>
+    <code>public void setPlayerAction(Player aPlayer, Action anAction)</code>
+    <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code></ul>
+    <code>public boolean placeBet(Player aPlayer, int aBet)</code>
+    <ul><b>Pre-condition</b>: <code>aBet</code> must be equal to, or greater than the <code>BlackjackCoord</code> attribute <code>minimumBet</code>.<br />
+    <code>aPlayer</code> attribute value <code>playerCredits</code> must be equal to, or greater than <code>aBet</code>.<br /> 
+    <b>Post-condition</b>: creates a new <code>Bet</code> object with the attribute int value <code>bet</code> and links to <code>aPlayer</code>, then returns <code>true</code>.  Otherwise returns <code>false</code></ul>
+    <code>public void dealCards()</code>
+    <ul><b>Post-condition</b>: the 6 <code>Deck</code> objects are combined and shuffled.  Each <code>Player</code> object has a <code>Card</code> object added to the linked <code>PlayerHand</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects.<br />
+A <code>Card</code> object is added to the <code>DealerHand</code> object which is linked to the <code>Dealer</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects
+</ul>
+<code>public int getMinimumBet()</code>
+<ul><b>Post-condition</b>: returns the int value <code>minimumBet</code>
+</p>
