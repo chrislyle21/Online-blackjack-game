@@ -183,7 +183,7 @@
 <h2>Detailed class descriptions</h2>
 <p>
     <b>Class</b><br />
-    <code>BlackjackCoord</code><br />
+    <code>BlackjackCoord</code>
     <ul>The game coordinator</ul>
     <b>Attributes</b><br />
     <code>MinimumBet</code><br />
