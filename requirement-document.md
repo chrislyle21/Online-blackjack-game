@@ -186,15 +186,15 @@
     <code>BlackjackCoord</code>
     <ul>The game coordinator</ul>
     <b>Attributes</b><br />
-    <code>MinimumBet</code><br />
+    <code>MinimumBet</code>
     <ul>The minimum bet amount for the game</ul>
     <b>Links</b><br />
-    <code>private Dealer dealer</code><br />
+    <code>private Dealer dealer</code>
     <ul>References the linked <code>Dealer</code> object</ul>
     <code>private List&lt;Player&gt; players</code><br />
     <ul>References the collection of linked <code>Player</code> objects</ul>
     <b>Constructor</b><br />
-    <code>public BlackjackCoord(int aMinBet)</code><br />
+    <code>public BlackjackCoord(int aMinBet)</code>
     <ul><b>Post-condition</b>: initialises a new <code>BlackjackCoord</code> object with the given attributes and initialises a new             <code>Dealer</code> object</ul>
     <b>Protocol</b><br />
     <code>public Map&lt;Dealer, List&lt;Player&gt;&gt; getDealerAndPlayers()</code>
