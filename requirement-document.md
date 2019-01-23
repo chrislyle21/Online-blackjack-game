@@ -193,9 +193,11 @@
     <ul>References the linked <code>Dealer</code> object</ul>
     <code>private List&lt;Player&gt; players</code>
     <ul>References the collection of linked <code>Player</code> objects</ul>
+    <br />
     <b>Constructor</b><br />
     <code>public BlackjackCoord(int aMinBet)</code>
     <ul><b>Post-condition</b>: initialises a new <code>BlackjackCoord</code> object with the given attributes and initialises a new             <code>Dealer</code> object</ul>
+    <br />
     <b>Protocol</b><br />
     <code>public Map&lt;Dealer, List&lt;Player&gt;&gt; getDealerAndPlayers()</code>
     <ul><b>Post-condition</b>: returns a map with the <code>Dealer</code> object as the key and a list of <code>Player</code> objects as the value</ul>
@@ -222,10 +224,10 @@
     <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code></ul>
     <code>public boolean placeBet(Player aPlayer, int aBet)</code>
     <ul><b>Pre-condition</b>: <code>aBet</code> must be equal to, or greater than the <code>BlackjackCoord</code> attribute <code>minimumBet</code>.<br />
-    <code>aPlayer</code> attribute value <code>playerCredits</code> must be equal to, or greater than <code>aBet</code>.   
+    <code>aPlayer</code> attribute value <code>playerCredits</code> must be equal to, or greater than <code>aBet</code>.<br /> 
     <b>Post-condition</b>: creates a new <code>Bet</code> object with the attribute int value <code>bet</code> and links to <code>aPlayer</code>, then returns <code>true</code>.  Otherwise returns <code>false</code></ul>
     <code>public void dealCards()</code>
-    <ul><b>Post-condition</b>: the 6 <code>Dec</code> objects are combined and shuffled.  Each <code>Player</code> object has a <code>Card</code> object added to the linked <code>PlayerHand</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects.<br />
+    <ul><b>Post-condition</b>: the 6 <code>Deck</code> objects are combined and shuffled.  Each <code>Player</code> object has a <code>Card</code> object added to the linked <code>PlayerHand</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects.<br />
 A <code>Card</code> object is added to the <code>DealerHand</code> object which is linked to the <code>Dealer</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects
 </ul>
 <code>public int getMinimumBet()</code>
