@@ -182,30 +182,30 @@
 <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-implementation.jpg" height="600" width="800" />
 <h2>Detailed class descriptions</h2>
 <p>
-    <b>Class</b><br />
-    <code>BlackjackCoord</code> - The game coordinator<br />
+    <b>Class</b>
+    <code>BlackjackCoord</code> - The game coordinator
     <br />
-    <b>Attributes</b><br />
-    <code>MinimumBet</code> - The minimum bet amount for the game<br />
+    <b>Attributes</b>
+    <code>MinimumBet</code> - The minimum bet amount for the game
     <br />
-    <b>Links</b><br />
+    <b>Links</b>
     <code>private Dealer dealer</code>
     <ul>References the linked <code>Dealer</code> object</ul>
-    <code>private List&lt;Player&gt; players</code><br />
+    <code>private List&lt;Player&gt; players</code>
     <ul>References the collection of linked <code>Player</code> objects</ul>
-    <b>Constructor</b><br />
+    <b>Constructor</b>
     <code>public BlackjackCoord(int aMinBet)</code>
     <ul><b>Post-condition</b>: initialises a new <code>BlackjackCoord</code> object with the given attributes and initialises a new             <code>Dealer</code> object</ul>
-    <b>Protocol</b><br />
+    <b>Protocol</b>
     <code>public Map&lt;Dealer, List&lt;Player&gt;&gt; getDealerAndPlayers()</code>
     <ul><b>Post-condition</b>: returns a map with the <code>Dealer</code> object as the key and a list of <code>Player</code> objects as the value</ul>
-    <code>public Set&lt;Bet&gt; getBets()</code><br />
+    <code>public Set&lt;Bet&gt; getBets()</code>
     <ul><b>Post-condition</b>: returns a set of <code>Bet</code> objects</ul>
-    <code>public Bet getPlayerBet(Player aPlayer)</code><br />
+    <code>public Bet getPlayerBet(Player aPlayer)</code>
     <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to <code>aPlayer</code></ul>
-    <code>public PlayerAction getPlayerAction(Player aPlayer)</code><br />
+    <code>public PlayerAction getPlayerAction(Player aPlayer)</code>
     <ul><b>Post-condition</b>: returns the <code>PlayerAction</code> object linked to <code>aPlayer</code></ul>
-    <code>public PlayerAction getPlayerHand(Player aPlayer)</code><br />
+    <code>public PlayerAction getPlayerHand(Player aPlayer)</code>
     <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to <code>aPlayer</code></ul>
     <code>public Action getDealerAction()</code>
     <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to <code>aDealer</code></ul>
