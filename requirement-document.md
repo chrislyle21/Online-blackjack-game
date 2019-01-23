@@ -217,8 +217,10 @@
     <ul><b>Post-condition</b>: a new <code>Player</code> object is created with the string attribute <code>playerName</code> set to <code>aName</code><br />
     The receiver is added to the <code>BlackjackCoord</code> attribute <code>players</code></ul>
     <code>public void setDealerAction(String anAction)</code>
-        <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the <code>Dealer</code> to <code>anAction</code></ul>
+    <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the <code>Dealer</code> to <code>anAction</code></ul>
     <code>public void setPlayerAction(Player aPlayer, Action anAction)</code>
-        <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code></ul>
-
+    <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code></ul>
+    <code>public boolean placeBet(Player aPlayer, int aBet)</code>
+    <ul><b>Pre-condition</b>: <code>aBet</code> must be equal to, or greater than the <code>BlackjackCoord</code> attribute <code>minimumBet</code><br />
+    <code>aPlayer</code> attribute value <code>playerCredits</code> must be equal to, or greater than <code>aBet</code></ul>.   
 </p>
