@@ -231,8 +231,8 @@
 A <code>Card</code> object is added to the <code>DealerHand</code> object which is linked to the <code>Dealer</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects
 </ul>
 <code>public int getMinimumBet()</code>
-<ul><b>Post-condition</b>: returns the int value <code>minimumBet</code>
-<code>public String toString()</code>
+<ul><b>Post-condition</b>: returns the int value <code>minimumBet</code><>
+<code>public String toString()</code><br />
 <ul><b>Post-condition</b>: returns a string representation of the receiver</ul>
 </p>
 <br />
