@@ -232,6 +232,8 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
 </ul>
 <code>public int getMinimumBet()</code>
 <ul><b>Post-condition</b>: returns the int value <code>minimumBet</code>
+<code>public String toString()</code>
+<ul><b>Post-condition</b>: returns a string representation of the receiver</ul>
 </p>
 <br />
 <br />
