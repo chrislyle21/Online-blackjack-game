@@ -237,7 +237,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
 <br />
 <p>
 <b>Class</b><br />
-    <code>Player</code> - A player in the game implements comparable<Player>
+    <code>Player</code> - A player in the game implements comparable&lt;Player&gt;
 <br />
     <br />
     <b>Attributes</b><br />
