@@ -35,6 +35,7 @@ public class main
             System.out.print(each.getPlayerHand().getCards().toString() + "\n");
             System.out.print(each.getPlayerName() + ": hand = " + each.getPlayerHand().getHandValue() + "\n");
         }
+        System.out.println(bjCoord.toString());
         
     }
 
