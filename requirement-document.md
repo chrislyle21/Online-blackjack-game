@@ -233,3 +233,20 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
 <code>public int getMinimumBet()</code>
 <ul><b>Post-condition</b>: returns the int value <code>minimumBet</code>
 </p>
+
+<p>
+<b>Class</b><br />
+    <code>Player</code> - A player in the game implements comparable<Player>
+<br />
+    <br />
+    <b>Attributes</b><br />
+    <code>private String playerName</code> - The name of the player<br />
+    <code>private int playerCredits</code> - A player’s credits<br />
+    <br />
+    <b>Links</b><br />
+    <code>private Bet bet</code>
+    <ul>References the linked <code>Bet /code> object</ul>
+    <code>private int playerCredits</code>
+    <ul>References the linked enum<code>Action</code></ul>
+    <br />
+</p>
