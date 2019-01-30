@@ -233,7 +233,8 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
 <code>public int getMinimumBet()</code>
 <ul><b>Post-condition</b>: returns the int value <code>minimumBet</code>
 </p>
-
+<br />
+<br />
 <p>
 <b>Class</b><br />
     <code>Player</code> - A player in the game implements comparable<Player>
@@ -245,8 +246,14 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <b>Links</b><br />
     <code>private Bet bet</code>
-    <ul>References the linked <code>Bet /code> object</ul>
+    <ul>References the linked <code>Bet</code> object</ul>
     <code>private int playerCredits</code>
-    <ul>References the linked enum<code>Action</code></ul>
+    <ul>References the linked enum<code>Action</code></ul>    
+    <code>Private PlayerHand PlayerHand</code>
+    <ul>References the linked <code>PlayerHand</code> object</ul>
+    <br />
+    <b>Constructor</b><br />
+    <code>Player(String aName)</code>
+    <ul><b>Post-condition</b>: creates a new <code>Player</code> object with the attribute <code>playerName</code> is set to <code>aName</code>.  A new <code>PlayerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code>.</ul>
     <br />
 </p>
