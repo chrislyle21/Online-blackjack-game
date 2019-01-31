@@ -35,6 +35,11 @@ abstract class Hand
         return this.handValue;
     }
 
+    void resetHandVallue()
+    {
+        this.handValue = 0;
+    }
+
     List<Card> getCards()
     {
         return this.cards;

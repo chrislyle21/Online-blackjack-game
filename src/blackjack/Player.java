@@ -9,7 +9,7 @@ package blackjack;
  *
  * @author chris lyle
  */
-public class Player
+public class Player implements Comparable<Player>
 {
 
     private String playerName;
@@ -82,6 +82,26 @@ public class Player
     void resetPlayerHand()
     {
         this.getPlayerHand().getCards().clear();
+    }
+
+    /**
+     *
+     * @param aPlayer
+     * @return
+     */
+    @Override
+    public int compareTo(Player aPlayer)
+    {
+        int result = 0;
+        if (aPlayer == null || aPlayer.getClass() != this.getClass())
+        {
+            result = -1;
+        }
+        else
+        {
+            result = this.getPlayerCredits() - aPlayer.getPlayerCredits();
+        }
+        return result;
     }
 
     @Override

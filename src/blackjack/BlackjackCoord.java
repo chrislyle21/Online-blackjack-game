@@ -149,6 +149,7 @@ public class BlackjackCoord
         return this.minimumBet;
     }
 
+    @Override
     public String toString()
     {
         return "Game has " + this.players.size() + " players and a miminum bet of £"
