@@ -244,7 +244,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <b>Attributes</b><br />
     <code>private String playerName</code> - The name of the player<br />
-    <code>private int playerCredits</code> - A player’s credits<br />
+    <code>private int playerCredits</code> - A player’s credits
     <br />
     <b>Links</b><br />
     <code>private Bet bet</code>
