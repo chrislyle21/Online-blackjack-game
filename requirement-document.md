@@ -261,8 +261,27 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <b>Protocol</b><br />
     <code>String getPlayerName()</code>
     <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object inked to the receiver</ul>
+    <code>int getPlayerCredits()</code>
+    <ul><b>Post-condition</b>: returns the <code>playerCredits</code></ul>
+    <code>Bet getBet()</code>
+    <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to the receiver</ul>
+    <code>Bet setBet()</code>
+    <ul><b>Post-condition</b>: sets the <code>Bet</code> object linked to the receiver</ul>
+    <code>PlayerHand getPlayerHand()</code>
+    <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to the receiver</ul>
     <code>void setPlayerAction(Action anAction)</code>
     <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
     <code>Action getPlayerAction()</code>
-    <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</code></ul>    
+    <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</code></ul> 
+    <code>addCredits(int credits)</code>
+    <ul><b>Post-condition:</b>: the <code>Player</code> object attribute <code>playerCredits</code> is incremented by <code>credits</code></ul>
+    <code>boolean deductCredits(int credits)</code>
+    <ul><b>Pre-condition:</b>: <code>credits</code> must be greater than 0<br />
+    <b>Post-condition:</b>: the <code>Player</code> object attribute <code>playerCredits</code> is incremented by <code>credits</code> and <code>true</code> is returned.  Otherwise returns <code>false</code></ul>
+    <code>void resetPlayerHand()</code>
+    <ul><b>Post-condition</b>: deletes the <code>Card</code> objects linked to the <code>PlayerHand</code> object which is linked to the receiver</ul>
+    <code>public String toString()</code>
+    <ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
+    <code>public int compareTo(Object obj)</code>
+    <ul><b>Post-condition</b>: returns <code>0</code> if the receiver is of equal positioning, negative if the receiver is before           <code>obj</code> and positive if the receiver comes after <code>obj</code></ul>
 </p>
