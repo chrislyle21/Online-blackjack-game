@@ -261,6 +261,14 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <b>Protocol</b><br />
     <code>String getPlayerName()</code>
     <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object inked to the receiver</ul>
+    <code>int getPlayerCredits()</code>
+    <ul><b>Post-condition</b>: returns the <code>playerCredits</code></ul>
+    <code>Bet getBet()</code>
+    <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to the receiver</ul>
+    <code>Bet setBet()</code>
+    <ul><b>Post-condition</b>: sets the <code>Bet</code> object linked to the receiver</ul>
+    <code>PlayerHand getPlayerHand()</code>
+    <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to the receiver</ul>
     <code>void setPlayerAction(Action anAction)</code>
     <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
     <code>Action getPlayerAction()</code>
