@@ -282,6 +282,6 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <ul><b>Post-condition</b>: deletes the <code>Card</code> objects linked to the <code>PlayerHand</code> object which is linked to the receiver</ul>
     <code>public String toString()</code>
     <ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
-    <code>public int compareTo(Object obj)</code>
-    <ul><b>Post-condition</b>: returns <code>0</code> if the receiver is of equal positioning, negative if the receiver is before           <code>obj</code> and positive if the receiver comes after <code>obj</code></ul>
+    <code>public int compareTo(Player aPlayer)</code>
+    <ul><b>Post-condition</b>: returns <code>0</code> if the receiver is of equal positioning, negative if the receiver is before           <code>aPlayer</code> and positive if the receiver comes after <code>aPlayer</code></ul>
 </p>
