@@ -34,7 +34,7 @@ class Dealer
         {
             this.decks.add(n, new Deck());
         }
-        
+
         return this.decks;
     }
 
@@ -57,8 +57,8 @@ class Dealer
         for (int n = 0; n < 4; n++)
         {
             Collections.shuffle(this.combinedDecks);
-           
-        }       
+
+        }
     }
 
     List<Deck> getDecks()

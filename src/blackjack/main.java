@@ -27,16 +27,17 @@ public class main
             bjCoord.addPlayer(nameArr[n]);
         }
         bjCoord.getDealer().shuffleDecks();
-       
+
         bjCoord.dealCards();
         bjCoord.dealCards();
         for (Player each : bjCoord.getPlayers())
         {
             System.out.print(each.getPlayerHand().getCards().toString() + "\n");
-            System.out.print(each.getPlayerName() + ": hand = " + each.getPlayerHand().getHandValue() + "\n");
+            System.out.print(
+                    each.getPlayerName() + ": hand = " + each.getPlayerHand().getHandValue() + "\n");
         }
         System.out.println(bjCoord.toString());
-        
+
     }
 
 }
