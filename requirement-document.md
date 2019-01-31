@@ -265,7 +265,11 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
     <code>Action getPlayerAction()</code>
     <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</code></ul> 
-    <code>boolean addCredits(int credits)</code>
+    <code>addCredits(int credits)</code>
+    <ul><b>Post-condition:</b>: the <code>Player</code> object attribute <code>playerCredits</code> is incremented by <code>credits</code></ul>
+    <code>boolean deductCredits(int credits)</code>
     <ul><b>Pre-condition:</b>: <code>credits</code> must be greater than 0</ul>
     <ul><b>Post-condition:</b>: the <code>Player</code> object attribute <code>playerCredits</code> is incremented by <code>credits</code> and <code>true</code> is returned.  Otherwise returns <code>false</code></ul>
+    <code>void resetPlayerHand()</code>
+    <ul><b>Post-condition</b>: deletes the <code>Card</code> objects linked to the <code>PlayerHand</code> object which is linked to the receiver</ul>
 </p>
