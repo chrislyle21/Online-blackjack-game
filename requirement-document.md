@@ -182,7 +182,7 @@
 <img src="https://github.com/chrislyle21/blackjack_core_objects/blob/master/images/class-diagram-implementation.jpg" height="600" width="800" />
 <a id="dcd"><h2>Detailed class descriptions</h2></a>
 <p>
-    <b>Class</b><br />
+    <a id="bjc"><b>Class</b><a><br />
     <code>BlackjackCoord</code> - The game coordinator<br />
     <br />
     <b>Attributes</b><br />
@@ -238,7 +238,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
 <br />
 <br />
 <p>
-    <b>Class</b><br />
+    <a id="pc"><b>Class</b><a><br />
     <code>Player</code> - A player in the game implements comparable&lt;Player&gt;
     <br />
     <br />
