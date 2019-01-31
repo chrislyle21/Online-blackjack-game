@@ -247,7 +247,8 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <code>private int playerCredits</code> - A player’s credits<br />
     <br />
     <b>Links</b><br />
-    <code>private Bet bet</code><br /><ul>References the linked <code>Bet</code> object</ul>
+    <code>private Bet bet</code>
+    <ul>References the linked <code>Bet</code> object</ul>
     <code>private int playerCredits</code>
     <ul>References the linked enum<code>Action</code></ul>    
     <code>Private PlayerHand PlayerHand</code>
