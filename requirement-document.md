@@ -294,6 +294,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <b>Attributes</b><br />
     None
     <br />
+    <br />    
     <b>Links</b><br />
     <code>private Listlt;Deckgt; decks</code>
         <ul>References the linked <code>Deck</code> objects each containing 52 <code>Card</code> objects</ul>
@@ -304,6 +305,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <code>Private DealerHand DealerHand</code>
         <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</C> objects</ul>
     <br />
-    <b>Constructor</b><br />
+    <b>Constructor</b>
+    <br />
     <code>Dealer()</code>
 </p>
