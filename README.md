@@ -8,5 +8,6 @@
 <li><a href="https://github.com/chrislyle21/blackjack_core_objects/blob/master/requirement-document.md#dcd">Click here for the detailed class descriptions form the implementation model</a>
   <ul><a href="https://github.com/chrislyle21/blackjack_core_objects/blob/master/requirement-document.md#bjc">Class BlackjackCoord</a></ul>
   <ul><a href="https://github.com/chrislyle21/blackjack_core_objects/blob/master/requirement-document.md#pc">Class Player</a></ul>
+  <ul><a href="https://github.com/chrislyle21/blackjack_core_objects/blob/master/requirement-document.md#dc">Class Dealer</a></ul>
 </li>
 </ul>
