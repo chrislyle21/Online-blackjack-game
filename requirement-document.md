@@ -296,16 +296,14 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <br />    
     <b>Links</b><br />
-    <code>private Listlt;Deckgt; decks</code>
+    <code>private List&ltDeck&gt; decks</code>
         <ul>References the linked <code>Deck</code> objects each containing 52 <code>Card</code> objects</ul>
-    <code>private Listlt;Deckgt; combinedDecks</code>
+    <code>private List&ltDeck&gt; combinedDecks</code>
     <ul>References the linked shuffled<code>Deck</code> objects</ul>    
     <code>private Action dealerAction</code>
     <ul>References the linked <code>Action</code> object</ul>
     <code>Private DealerHand DealerHand</code>
-        <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</C> objects</ul>
-    <br />
-    <b>Constructor</b>
-    <br />
+    <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</C> objects</ul>
+    <b>Constructor</b>   
     <code>Dealer()</code>
 </p>
