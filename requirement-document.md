@@ -251,7 +251,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <ul>References the linked <code>Bet</code> object</ul>
     <code>private int playerCredits</code>
     <ul>References the linked enum<code>Action</code></ul>    
-    <code>Private PlayerHand PlayerHand</code>
+    <code>private PlayerHand PlayerHand</code>
     <ul>References the linked <code>PlayerHand</code> object</ul>
     <br />
     <b>Constructor</b><br />
@@ -284,4 +284,26 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
     <code>public int compareTo(Player aPlayer)</code>
     <ul><b>Post-condition</b>: returns <code>0</code> if the receiver is of equal positioning, negative if the receiver is before           <code>aPlayer</code> and positive if the receiver comes after <code>aPlayer</code>. If <code>aPlayer</code> is <code>null</code> <code>-1</code> is returned</ul>
+</p>
+
+<p>
+    <a id="dc"><b>Class</b><a><br />
+    <code>Dealer</code> - A dealer in the game
+    <br />
+    <br />
+    <b>Attributes</b><br />
+    None
+    <br />
+    <b>Links</b><br />
+    <code>private Listlt;Deckgt; decks</code>
+        <ul>References the linked <code>Deck</code> objects each containing 52 <code>Card</code> objects</ul>
+    <code>private Listlt;Deckgt; combinedDecks</code>
+    <ul>References the linked shuffled<code>Deck</code> objects</ul>    
+    <code>private Action dealerAction</code>
+    <ul>References the linked <code>Action</code> object</ul>
+    <code>Private DealerHand DealerHand</code>
+        <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</C> objects</ul>
+    <br />
+    <b>Constructor</b><br />
+    <code>Dealer()</code>
 </p>
