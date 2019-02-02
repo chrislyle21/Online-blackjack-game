@@ -82,7 +82,7 @@
             <ul type="disc">
                 <li>Test that 3 : 2 is paid on a player blackjack.</li>
                 <li>Test that an insurance bet is paid at 2 : 1.</li>
-                <li>Test that a winning bet that is not a blackjack is paid at 1 : 1.></li>
+                <li>Test that a winning bet that is not a blackjack is paid at 1 : 1.</li>
                 <li>Test that a bet is not paid out if a player loses.</li>
             </ul>
         </li>
