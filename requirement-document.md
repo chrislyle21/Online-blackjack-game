@@ -310,5 +310,5 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <b>Constructor</b><br />   
     <code>Dealer()</code>
-        <ul><b>Post-condition</b>:creates a new <code>Dealer</code> object.  A new <code>DealerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code></ul>
+        <ul><b>Post-condition</b>: creates a new <code>Dealer</code> object.  A new <code>DealerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code></ul>
 </p>
