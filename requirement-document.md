@@ -257,7 +257,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <b>Constructor</b><br />
     <code>Player(String aName)</code>
-    <ul><b>Post-condition</b>: creates a new <code>Player</code> object with the attribute <code>playerName</code> is set to       <code>aName</code>.  A new <code>PlayerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code>.</ul>
+    <ul><b>Post-condition</b>: creates a new <code>Player</code> object with the attribute <code>playerName</code> is set to       <code>aName</code>.  A new <code>PlayerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code></ul>
     <br />
     <b>Protocol</b><br />
     <code>String getPlayerName()</code>
@@ -308,6 +308,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <code>Private DealerHand DealerHand</code>
     <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</code> objects</ul>
     <br />
-    <b>Constructor</b>   
+    <b>Constructor</b><br />   
     <code>Dealer()</code>
+        <ul><b>Post-condition</b>:creates a new <code>Dealer</code> object.  A new <code>DealerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code></ul>
 </p>
