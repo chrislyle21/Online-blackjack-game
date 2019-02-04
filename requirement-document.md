@@ -309,4 +309,12 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <b>Constructor</b><br />   
     <code>Dealer()</code>
         <ul><b>Post-condition</b>: creates a new <code>Dealer</code> object.  A new <code>DealerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code></ul>
+    <br />
+    <b>Protocol</b><br />
+    <code>private List&lt;Deck&gt; addDecks()</code>
+    <ul><b>Post-condition</b>: creates 6 new <code>Deck</code> objects each containing 52 <code>Card</code> objects and links them to       the receiver </ul>    
+    <code>private List<Card> combineDecks()</code>
+    <ul><b>Post-condition</b>: merges all the <code>Deck</code> objects linked to the receiver in to one list,                               <code>combinedDecks</code></ul>
+    <code>List&lt;Card&gt; shuffleDecks()</code>
+    <ul><b>Post-condition</b>: combines the <code>Deck</code> objects and shuffles them together</ul>
 </p>
