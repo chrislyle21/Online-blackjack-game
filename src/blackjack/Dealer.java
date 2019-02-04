@@ -65,7 +65,12 @@ class Dealer
     {
         return this.decks;
     }
-
+    
+    List<Card> getCombinedDecks()
+    {
+        return this.combinedDecks;
+    }
+    
     Action getDealerAction()
     {
         return this.dealerAction;
@@ -79,12 +84,6 @@ class Dealer
     DealerHand getDealerHand()
     {
         return this.dealerHand;
-    }
-
-    Card dealCards(Player aPlayer, int index)
-    {
-        aPlayer.getPlayerHand().addToHand(this.combinedDecks.get(index));
-        return this.combinedDecks.remove(index);
     }
 
     void addToPlayerHand(Hand aHand, Card aCard)

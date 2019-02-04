@@ -96,14 +96,12 @@ public class BlackjackCoord
 
     public void dealCards()
     {
-
         for (Player each : this.getPlayers())
         {
-            each.getPlayerHand().setHandValue(this.getDealer().dealCards(each,
-                    this.counter).getValue().getNumVal());
+            this.getDealer().addToPlayerHand(each.getPlayerHand(), 
+                    this.getDealer().getCombinedDecks().remove(this.counter));
             this.counter++;
         }
-
     }
 
     /**
