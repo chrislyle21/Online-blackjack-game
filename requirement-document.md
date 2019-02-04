@@ -293,7 +293,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <br />
     <b>Attributes</b><br />
-    <coed>private int numOfDecks</code> - Sets the number of decks used in a game
+    <code>private int numOfDecks</code> - Sets the number of decks used in a game
     <br />
     <br />    
     <b>Links</b><br />
