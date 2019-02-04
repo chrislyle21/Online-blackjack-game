@@ -17,7 +17,7 @@ public class main
      */
     public static void main(String[] args)
     {
-        BlackjackCoord bjCoord = new BlackjackCoord(5);
+        BlackjackCoord bjCoord = new BlackjackCoord(5, 6);
         String[] nameArr =
         {
             "Joe Bloggs", "Chris Long", "Paul Short"

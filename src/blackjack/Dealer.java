@@ -20,17 +20,19 @@ class Dealer
     private List<Card> combinedDecks;
     private Action dealerAction;
     private DealerHand dealerHand;
+    private int numOfDecks;
 
-    Dealer()
+    Dealer(int deckAmount)
     {
         this.dealerHand = new DealerHand();
         this.decks = new ArrayList<>();
         this.combinedDecks = new ArrayList<>();
+        this.numOfDecks = deckAmount;
     }
 
     private List<Deck> addDecks()
     {
-        for (int n = 0; n < 6; n++)
+        for (int n = 0; n < this.numOfDecks; n++)
         {
             this.decks.add(n, new Deck());
         }
@@ -65,7 +67,12 @@ class Dealer
     {
         return this.decks;
     }
-
+    
+    List<Card> getCombinedDecks()
+    {
+        return this.combinedDecks;
+    }
+    
     Action getDealerAction()
     {
         return this.dealerAction;
@@ -79,12 +86,6 @@ class Dealer
     DealerHand getDealerHand()
     {
         return this.dealerHand;
-    }
-
-    Card dealCards(Player aPlayer, int index)
-    {
-        aPlayer.getPlayerHand().addToHand(this.combinedDecks.get(index));
-        return this.combinedDecks.remove(index);
     }
 
     void addToPlayerHand(Hand aHand, Card aCard)

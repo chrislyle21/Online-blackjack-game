@@ -15,7 +15,7 @@ import org.junit.Test;
  */
 public class TestBlackjackCoord
 {
-    BlackjackCoord bjCoord = new BlackjackCoord(5);
+    BlackjackCoord bjCoord = new BlackjackCoord(5, 6);
     String[] nameArr = {"Joe Bloggs", "Chris Long", "Paul Short"};
             
     @Test
