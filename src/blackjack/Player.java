@@ -9,50 +9,104 @@ package blackjack;
  *
  * @author chris lyle
  */
-public class Player
+public class Player implements Comparable<Player>
 {
+
     private String playerName;
     private int playerCredits;
     private Bet bet;
     private Action playerAction;
     private PlayerHand playerHand;
-    
-    Player(String aName){
+
+    Player(String aName)
+    {
         this.playerName = aName;
+        this.playerHand = new PlayerHand();
     }
-    
-    int getPlayerCredits(){
+
+    PlayerHand getPlayerHand()
+    {
+        return this.playerHand;
+    }
+
+    String getPlayerName()
+    {
+        return this.playerName;
+    }
+
+    int getPlayerCredits()
+    {
         return this.playerCredits;
     }
-    
-    Action getPlayerAction(){
+
+    Action getPlayerAction()
+    {
         return this.playerAction;
     }
 
-    void setPlayerAction(Action anAction){
+    void setPlayerAction(Action anAction)
+    {
         this.playerAction = anAction;
     }
-    
-    Bet getBet(){
-        return this.bet; 
+
+    Bet getBet()
+    {
+        return this.bet;
     }
-    
-    void addCredits(int credits){
-        this.playerCredits = (this.getPlayerCredits() + credits);
+
+    void setBet(Bet aBet)
+    {
+        this.bet = aBet;
     }
-    
-    PlayerHand getPlayerHand(){
-        return this.playerHand;
+
+    boolean addCredits(int credits)
+    {
+        boolean result = false;
+        if (credits > 0)
+        {
+            this.playerCredits = (this.getPlayerCredits() + credits);
+            result = true;
+        }
+        return result;
     }
-    
-    String getPlayerName(){
-        return this.playerName;
+
+    int deductCredits(int credits)
+    {
+        if ((this.getPlayerCredits() - credits) > 0)
+        {
+            this.playerCredits = (this.playerCredits - credits);
+        }
+        return this.getPlayerCredits();
     }
-    public String toString(){
+
+    void resetPlayerHand()
+    {
+        this.getPlayerHand().getCards().clear();
+    }
+
+    /**
+     *
+     * @param aPlayer
+     * @return
+     */
+    @Override
+    public int compareTo(Player aPlayer)
+    {
+        int result = 0;
+        if (aPlayer == null || aPlayer.getClass() != this.getClass())
+        {
+            result = -1;
+        }
+        else
+        {
+            result = this.getPlayerCredits() - aPlayer.getPlayerCredits();
+        }
+        return result;
+    }
+
+    @Override
+    public String toString()
+    {
         return "Player name: " + this.getPlayerName() + "/nCredits: " + this.getPlayerCredits();
-    }
-    
-    void deductCredits(int credits){
-        this.playerCredits = (this.playerCredits - credits);
     }
 }

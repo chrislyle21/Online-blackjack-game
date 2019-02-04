@@ -9,7 +9,7 @@ package blackjack;
  *
  * @author chris
  */
-public enum Action
+enum Action
 {
     HIT,
     STAND,

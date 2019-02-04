@@ -14,33 +14,49 @@ import java.util.List;
  */
 abstract class Hand
 {
-    private final int handValue;
+
+    private int handValue;
     private final List<Card> cards;
-    
-    Hand(){
+
+    Hand()
+    {
         this.handValue = 0;
         this.cards = new ArrayList<>();
     }
-    
-    void addToHand(Card aCard){
-        this.cards.add(aCard);
+
+    void setHandValue(int aVal)
+    {
+        this.handValue = this.getHandValue() + aVal;
+
     }
-    
-    void removeFromHand(Card aCard){
-        this.cards.remove(aCard);
-    }
-    List<Card> getCards(){
-        return this.cards;
-    }
-    
-    int getHandValue(){
+
+    int getHandValue()
+    {
         return this.handValue;
     }
-    
-    void setHandValue(){
-        int value = 0;
-        for(Card each : this.cards){
-            value = value + each.getValue().getNumVal();
-        }
+
+    void resetHandVallue()
+    {
+        this.handValue = 0;
+    }
+
+    List<Card> getCards()
+    {
+        return this.cards;
+    }
+
+    void addToHand(Card aCard)
+    {
+        this.cards.add(aCard);
+    }
+
+    void removeFromHand(Card aCard)
+    {
+        this.cards.remove(aCard);
+    }
+
+    public int getHandSize(Player aPlayer)
+    {
+        return this.getCards().size();
     }
 }

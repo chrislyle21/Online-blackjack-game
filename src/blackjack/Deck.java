@@ -9,33 +9,46 @@ package blackjack;
  *
  * @author chris
  */
-public final class Deck
+final class Deck
 {
+
     private final Card[] cardArr;
-    
-    Deck(){
+
+    Deck()
+    {
         this.cardArr = new Card[52];
         this.generateDeck();
     }
-    
-    void generateDeck(){
+
+    Card[] getCards()
+    {
+        return this.cardArr;
+    }
+
+    Card getCard(int index)
+    {
+        return cardArr[index];
+    }
+
+    void generateDeck()
+    {
         int counter = 0;
-        for(Suit each : Suit.values()){
-            for(Value eachVal : Value.values()){
+
+        for (Suit each : Suit.values())
+        {
+            for (Value eachVal : Value.values())
+            {
                 cardArr[counter] = new Card(eachVal, each);
                 counter++;
             }
         }
+
     }
-    
-    Card[] getDeck(){
-        return this.cardArr;
-    }
-    
+
     @Override
-    public String toString(){
-        return "Deck size is: " + this.getDeck().length;
+    public String toString()
+    {
+        return "Deck size is: " + this.getCards().length;
     }
-    
-    
+
 }
