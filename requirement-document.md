@@ -332,3 +332,20 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <code>void public String toString()</code>    
         <ul><b>Post-condition</b>: returns a string representation of the <code>Deck</code> objects linked to the receiver and the receiver’s last action</ul>   
 </p>
+<br />
+<br />
+<p>
+    <b>Class</b><br/>
+    <code>Card</code> - The cards used in each deck<br/> 
+    <br/>
+    <b>Attributes</b><br/>    
+    <code>suit</code> - The suit of the card object<br/>
+    <code>value</code> - The value of a card object<br/>
+    <br/>
+    <b>Links</b><br/>
+    <ul>None</ul>
+    <b>constructor</b>
+    <code>Card(Value aValue, Suit aSuit)</code>
+        <ul><b>Post-condition</b>: creates a new <code>Card</code> object with the enum value set to <code>aValue</code> and the enum <code>Suit</code> set to <code>aSuit</code></ul>
+</p>
+      
