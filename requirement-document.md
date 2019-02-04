@@ -293,7 +293,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <br />
     <b>Attributes</b><br />
-    None
+    <coed>private int numOfDecks</code> - Sets the number of decks used in a game
     <br />
     <br />    
     <b>Links</b><br />
@@ -307,8 +307,8 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
         <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</code> objects</ul>
     <br />
     <b>Constructor</b><br />   
-    <code>Dealer()</code>
-        <ul><b>Post-condition</b>: creates a new <code>Dealer</code> object.  A new <code>DealerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code></ul>
+    <code>Dealer(int deckAmount)</code>
+        <ul><b>Post-condition</b>: creates a new <code>Dealer</code> object.  A new <code>DealerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code> and <code>numOfDecks</code> to <code>deckamount</code></ul>
     <br />
     <b>Protocol</b><br />
     <code>private List&lt;Deck&gt; addDecks()</code>
