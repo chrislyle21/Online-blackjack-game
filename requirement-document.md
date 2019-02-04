@@ -343,9 +343,12 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <code>value</code> - The value of a card object<br/>
     <br/>
     <b>Links</b><br/>
-    <ul>None</ul>
+        <ul>None</ul>
     <b>constructor</b>
     <code>Card(Value aValue, Suit aSuit)</code>
-        <ul><b>Post-condition</b>: creates a new <code>Card</code> object with the enum value set to <code>aValue</code> and the enum <code>Suit</code> set to <code>aSuit</code></ul>
+        <ul><b>Post-condition</b>: creates a new <code>Card</code> object with the enum <code>Value</code> set to <code>aValue</code> and the enum <code>Suit</code> set to <code>aSuit</code></ul>
+    <b>Protocol</b>
+        <code>Value getValue()</code>  
+        <ul><b>Post-condition</b>: returns the enum <code>Value</code>.  The value of a <code>Card</code> object</ul>
 </p>
       
