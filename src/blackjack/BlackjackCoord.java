@@ -24,10 +24,10 @@ public class BlackjackCoord
     private final Dealer dealer;
     private final List<Player> players;
 
-    public BlackjackCoord(int aMinBet)
+    public BlackjackCoord(int aMinBet, int numberOfDecks)
     {
         this.minimumBet = aMinBet;
-        this.dealer = new Dealer();
+        this.dealer = new Dealer(numberOfDecks);
         this.players = new ArrayList<>();
     }
 
