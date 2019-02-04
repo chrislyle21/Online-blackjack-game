@@ -235,9 +235,8 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
 <code>public String toString()</code>
 <ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
 </p>
-
-
-
+    <br />
+    <br />
 <p>
     <a id="pc"><b>Class</b><a><br />
     <code>Player</code> - A player in the game implements comparable&lt;Player&gt;
@@ -286,9 +285,8 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <code>public int compareTo(Player aPlayer)</code>
     <ul><b>Post-condition</b>: returns <code>0</code> if the receiver is of equal positioning, negative if the receiver is before           <code>aPlayer</code> and positive if the receiver comes after <code>aPlayer</code>. If <code>aPlayer</code> is <code>null</code> <code>-1</code> is returned</ul>
 </p>
-
-
-
+    <br />
+    <br />
 <p>
     <a id="dc"><b>Class</b><a><br />
     <code>Dealer</code> - A dealer in the game
