@@ -347,16 +347,18 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <b>constructor</b>
     <code>Card(Value aValue, Suit aSuit)</code>
         <ul><b>Post-condition</b>: creates a new <code>Card</code> object with the enum <code>Value</code> set to <code>aValue</code> and the enum <code>Suit</code> set to <code>aSuit</code></ul><br />
-    <b>Protocol</b>
-    <code>Value getValue()</code>  
-        <ul><b>Post-condition</b>: returns the enum <code>Value</code>.  The value of a <code>Card</code> object</ul>
+    <b>Protocol</b><br />
     <code>Value getValue()</code>  
         <ul><b>Post-condition</b>: returns the enum <code>Value</code>.  The value of a <code>Card</code> object</ul>
     <code>Suit getSuit()</code>  
         <ul><b>Post-condition</b>: returns the enum <code>Suit</code>.  The suit of a <code>Card</code> object</ul>
     <code>public String toString()</code>    
         <ul><b>Post-condition</b>: returns a string representation of the <code>Card</code> object linked to the receiver</ul>  
-     <code>public int compareTo()</code>    
-        <ul><b>Post-condition</b>: returns a string representation of the <code>Card</code> object linked to the receiver</ul> 
+     <code>public int compareTo(Card aCard)</code>    
+        <ul><b>Post-condition</b>: returns a negative the receiver is before <code>aCard</code>, 0 if equal and positive if the receiver comes after <code>aCard</code></ul> 
+     <code>public boolean equals(Object obj)</code>    
+        <ul><b>Post-condition</b>: returns <code>true</code> if the receiveris equal to <code>obj</code></ul> 
+     <code>public boolean hashCode()</code>    
+        <ul><b>Post-condition</b>: returns a calculated hash code for the receiver</ul>
 </p>
       
