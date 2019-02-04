@@ -313,10 +313,14 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <b>Protocol</b><br />
     <code>private List&lt;Deck&gt; addDecks()</code>
     <ul><b>Post-condition</b>: creates 6 new <code>Deck</code> objects each containing 52 <code>Card</code> objects and links them to       the receiver </ul>    
-    <code>private List<Card> combineDecks()</code>
+    <code>private List&lt;Card&gt; combineDecks()</code>
     <ul><b>Post-condition</b>: merges all the <code>Deck</code> objects linked to the receiver in to one list,                               <code>combinedDecks</code></ul>
     <code>List&lt;Card&gt; shuffleDecks()</code>
     <ul><b>Post-condition</b>: combines the <code>Deck</code> objects and shuffles them together</ul>
-    <code>List&lt;Card&gt; shuffleDecks()</code>
-    <ul><b>Post-condition</b>: combines the <code>Deck</code> objects and shuffles them together</ul>
+    <code>List&lt;Deck&gt; getDecks()</code>
+    <ul><b>Post-condition</b>: returns a list og <code>Deck</code> objects linked to the receiver</ul>
+    <code>Action getDealerAction()</code>
+    <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</ul>
+    <code>void setDealerAction(Action anAction)</code>
+    <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
 </p>
