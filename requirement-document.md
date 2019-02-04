@@ -239,7 +239,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
 <p>
     <a id="pc"><b>Class</b><a><br />
-    <code>Player</code> - A player in the game implements comparable&lt;Player&gt;
+        <code>Player</code> - A player in the game implements <code>Comparable&lt;Player&gt;</code>
     <br />
     <br />
     <b>Attributes</b><br />
@@ -329,6 +329,36 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
         <ul><b>Post-condition</b>: links a <code>Card</code> object to the <code>PlayerHand</code> object linked to the <code>Player</code> object</ul>
     <code>void resetDealerHand()</code>   
         <ul><b>Post-condition</b>: deletes any reference to any <code>Card</code> objects linked to the <code>DealerHand</code> object linked to the receiver</ul>
-    <code>void public String toString()</code>    
+    <code>public String toString()</code>    
         <ul><b>Post-condition</b>: returns a string representation of the <code>Deck</code> objects linked to the receiver and the receiver’s last action</ul>   
 </p>
+<br />
+<br />
+<p>
+    <b>Class</b><br/>
+    <code>Card</code> - The cards used in each deck, implements <code>Comparable&lt;Card&gt;</code><br/> 
+    <br/>
+    <b>Attributes</b><br/>    
+    <code>suit</code> - The suit of the card object<br/>
+    <code>value</code> - The value of a card object<br/>
+    <br/>
+    <b>Links</b><br/>
+        <ul>None</ul>
+    <b>constructor</b>
+    <code>Card(Value aValue, Suit aSuit)</code>
+        <ul><b>Post-condition</b>: creates a new <code>Card</code> object with the enum <code>Value</code> set to <code>aValue</code> and the enum <code>Suit</code> set to <code>aSuit</code></ul><br />
+    <b>Protocol</b><br />
+    <code>Value getValue()</code>  
+        <ul><b>Post-condition</b>: returns the enum <code>Value</code>.  The value of a <code>Card</code> object</ul>
+    <code>Suit getSuit()</code>  
+        <ul><b>Post-condition</b>: returns the enum <code>Suit</code>.  The suit of a <code>Card</code> object</ul>
+    <code>public String toString()</code>    
+        <ul><b>Post-condition</b>: returns a string representation of the <code>Card</code> object linked to the receiver</ul>  
+     <code>public int compareTo(Card aCard)</code>    
+        <ul><b>Post-condition</b>: returns a negative the receiver is before <code>aCard</code>, 0 if equal and positive if the receiver comes after <code>aCard</code></ul> 
+     <code>public boolean equals(Object obj)</code>    
+        <ul><b>Post-condition</b>: returns <code>true</code> if the receiveris equal to <code>obj</code></ul> 
+     <code>public boolean hashCode()</code>    
+        <ul><b>Post-condition</b>: returns a calculated hash code for the receiver</ul>
+</p>
+      
