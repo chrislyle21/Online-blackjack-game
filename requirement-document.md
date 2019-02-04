@@ -223,17 +223,17 @@
     <code>public void setPlayerAction(Player aPlayer, Action anAction)</code>
     <ul><b>Post-condition</b>: sets the <code>PlayerAction</code> object linked to the receiver to <code>anAction</code></ul>
     <code>public boolean placeBet(Player aPlayer, int aBet)</code>
-    <ul><b>Pre-condition</b>: <code>aBet</code> must be equal to, or greater than the <code>BlackjackCoord</code> attribute <code>minimumBet</code>.<br />
+    <ul><b>Pre-condition</b>: <code>aBet</code> must be equal to, or greater than the <code>BlackjackCoord</code> attribute         <code>minimumBet</code>.<br />
     <code>aPlayer</code> attribute value <code>playerCredits</code> must be equal to, or greater than <code>aBet</code>.<br /> 
     <b>Post-condition</b>: creates a new <code>Bet</code> object with the attribute int value <code>bet</code> and links to <code>aPlayer</code>, then returns <code>true</code>.  Otherwise returns <code>false</code></ul>
     <code>public void dealCards()</code>
-    <ul><b>Post-condition</b>: the 6 <code>Deck</code> objects are combined and shuffled.  Each <code>Player</code> object has a <code>Card</code> object added to the linked <code>PlayerHand</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects.<br />
-A <code>Card</code> object is added to the <code>DealerHand</code> object which is linked to the <code>Dealer</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects
-</ul>
-<code>public int getMinimumBet()</code>
-<ul><b>Post-condition</b>: returns the int value <code>minimumBet</code></ul>
-<code>public String toString()</code>
-<ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
+    <ul><b>Post-condition</b>: the 6 <code>Deck</code> objects are combined and shuffled.  Each <code>Player</code> object has a       <code>Card</code> object added to the linked <code>PlayerHand</code> object and the <code>Card</code> object is removed from the combined <code>Deck</code> objects.<br />
+A <code>Card</code> object is added to the <code>DealerHand</code> object which is linked to the <code>Dealer</code> object and the         <code>Card</code> object is removed from the combined <code>Deck</code> objects
+    </ul>
+    <code>public int getMinimumBet()</code>
+    <ul><b>Post-condition</b>: returns the int value <code>minimumBet</code></ul>
+    <code>public String toString()</code>
+    <ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
 </p>
     <br />
     <br />
@@ -248,42 +248,42 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <b>Links</b><br />
     <code>private Bet bet</code>
-    <ul>References the linked <code>Bet</code> object</ul>
+        <ul>References the linked <code>Bet</code> object</ul>
     <code>private int playerCredits</code>
-    <ul>References the linked enum<code>Action</code></ul>    
+        <ul>References the linked enum<code>Action</code></ul>    
     <code>private PlayerHand PlayerHand</code>
-    <ul>References the linked <code>PlayerHand</code> object</ul>
+        <ul>References the linked <code>PlayerHand</code> object</ul>
     <br />
     <b>Constructor</b><br />
     <code>Player(String aName)</code>
-    <ul><b>Post-condition</b>: creates a new <code>Player</code> object with the attribute <code>playerName</code> is set to       <code>aName</code>.  A new <code>PlayerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code></ul>
+        <ul><b>Post-condition</b>: creates a new <code>Player</code> object with the attribute <code>playerName</code> is set to             <code>aName</code>.  A new <code>PlayerHand</code> object is created.  The attribute <code>handvalue</code> is set to <code>0</code>     </ul>
     <br />
     <b>Protocol</b><br />
     <code>String getPlayerName()</code>
-    <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object inked to the receiver</ul>
+        <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object inked to the receiver</ul>
     <code>int getPlayerCredits()</code>
-    <ul><b>Post-condition</b>: returns the <code>playerCredits</code></ul>
+        <ul><b>Post-condition</b>: returns the <code>playerCredits</code></ul>
     <code>Bet getBet()</code>
-    <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to the receiver</ul>
+        <ul><b>Post-condition</b>: returns the <code>Bet</code> object linked to the receiver</ul>
     <code>Bet setBet()</code>
-    <ul><b>Post-condition</b>: sets the <code>Bet</code> object linked to the receiver</ul>
+        <ul><b>Post-condition</b>: sets the <code>Bet</code> object linked to the receiver</ul>
     <code>PlayerHand getPlayerHand()</code>
-    <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to the receiver</ul>
+        <ul><b>Post-condition</b>: returns the <code>PlayerHand</code> object linked to the receiver</ul>
     <code>void setPlayerAction(Action anAction)</code>
-    <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
+        <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
     <code>Action getPlayerAction()</code>
-    <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</code></ul> 
+        <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</code></ul> 
     <code>addCredits(int credits)</code>
-    <ul><b>Post-condition:</b>: the <code>Player</code> object attribute <code>playerCredits</code> is incremented by <code>credits</code></ul>
+        <ul><b>Post-condition:</b>: the <code>Player</code> object attribute <code>playerCredits</code> is incremented by <code>credits</code></ul>
     <code>boolean deductCredits(int credits)</code>
-    <ul><b>Pre-condition:</b>: <code>credits</code> must be greater than 0<br />
+        <ul><b>Pre-condition:</b>: <code>credits</code> must be greater than 0<br />
     <b>Post-condition:</b>: the <code>Player</code> object attribute <code>playerCredits</code> is incremented by <code>credits</code> and <code>true</code> is returned.  Otherwise returns <code>false</code></ul>
     <code>void resetPlayerHand()</code>
-    <ul><b>Post-condition</b>: deletes the <code>Card</code> objects linked to the <code>PlayerHand</code> object which is linked to the receiver</ul>
+        <ul><b>Post-condition</b>: deletes the <code>Card</code> objects linked to the <code>PlayerHand</code> object which is linked to the receiver</ul>
     <code>public String toString()</code>
-    <ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
+        <ul><b>Post-condition</b>: returns a string representation of <code>BlackjackCoord</code></ul>
     <code>public int compareTo(Player aPlayer)</code>
-    <ul><b>Post-condition</b>: returns <code>0</code> if the receiver is of equal positioning, negative if the receiver is before           <code>aPlayer</code> and positive if the receiver comes after <code>aPlayer</code>. If <code>aPlayer</code> is <code>null</code> <code>-1</code> is returned</ul>
+        <ul><b>Post-condition</b>: returns <code>0</code> if the receiver is of equal positioning, negative if the receiver is before       <code>aPlayer</code> and positive if the receiver comes after <code>aPlayer</code>. If <code>aPlayer</code> is <code>null</code> <code>-1</code> is returned</ul>
 </p>
     <br />
     <br />
@@ -300,11 +300,11 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <code>private List&ltDeck&gt; decks</code>
         <ul>References the linked <code>Deck</code> objects each containing 52 <code>Card</code> objects</ul>
     <code>private List&ltDeck&gt; combinedDecks</code>
-    <ul>References the linked shuffled<code>Deck</code> objects</ul>    
+        <ul>References the linked shuffled<code>Deck</code> objects</ul>    
     <code>private Action dealerAction</code>
-    <ul>References the linked <code>Action</code> object</ul>
+        <ul>References the linked <code>Action</code> object</ul>
     <code>Private DealerHand DealerHand</code>
-    <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</code> objects</ul>
+        <ul>References the linked <code>DealerHand</code> object.  Contains <code>Card</code> objects</ul>
     <br />
     <b>Constructor</b><br />   
     <code>Dealer()</code>
@@ -312,15 +312,23 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <br />
     <b>Protocol</b><br />
     <code>private List&lt;Deck&gt; addDecks()</code>
-    <ul><b>Post-condition</b>: creates 6 new <code>Deck</code> objects each containing 52 <code>Card</code> objects and links them to       the receiver </ul>    
+        <ul><b>Post-condition</b>: creates 6 new <code>Deck</code> objects each containing 52 <code>Card</code> objects and links them to the receiver </ul>    
     <code>private List&lt;Card&gt; combineDecks()</code>
-    <ul><b>Post-condition</b>: merges all the <code>Deck</code> objects linked to the receiver in to one list,                               <code>combinedDecks</code></ul>
+        <ul><b>Post-condition</b>: merges all the <code>Deck</code> objects linked to the receiver in to one list,                               <code>combinedDecks</code></ul>
     <code>List&lt;Card&gt; shuffleDecks()</code>
-    <ul><b>Post-condition</b>: combines the <code>Deck</code> objects and shuffles them together</ul>
+        <ul><b>Post-condition</b>: combines the <code>Deck</code> objects and shuffles them together</ul>
     <code>List&lt;Deck&gt; getDecks()</code>
-    <ul><b>Post-condition</b>: returns a list og <code>Deck</code> objects linked to the receiver</ul>
+        <ul><b>Post-condition</b>: returns a list og <code>Deck</code> objects linked to the receiver</ul>
     <code>Action getDealerAction()</code>
-    <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</ul>
+        <ul><b>Post-condition</b>: returns the <code>Action</code> object linked to the receiver</ul>
     <code>void setDealerAction(Action anAction)</code>
-    <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
+        <ul><b>Post-condition</b>: sets the <code>Action</code> object linked to the receiver to <code>anAction</code></ul>
+    <code>DealerHand getDealerHand()</code>
+        <ul><b>Post-condition</b>: returns the <code>DealerHand</code> object linked to the receiver</ul>
+    <code>void addToPlayerHand(Hand aHand, Card aCard)</code>
+        <ul><b>Post-condition</b>: links a <code>Card</code> object to the <code>PlayerHand</code> object linked to the <code>Player</code> object</ul>
+    <code>void resetDealerHand()</code>   
+        <ul><b>Post-condition</b>: deletes any reference to any <code>Card</code> objects linked to the <code>DealerHand</code> object linked to the receiver</ul>
+    <code>void public String toString()</code>    
+        <ul><b>Post-condition</b>: returns a string representation of the <code>Deck</code> objects linked to the receiver and the receiver’s last action</ul>   
 </p>
