@@ -317,4 +317,6 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
     <ul><b>Post-condition</b>: merges all the <code>Deck</code> objects linked to the receiver in to one list,                               <code>combinedDecks</code></ul>
     <code>List&lt;Card&gt; shuffleDecks()</code>
     <ul><b>Post-condition</b>: combines the <code>Deck</code> objects and shuffles them together</ul>
+    <code>List&lt;Card&gt; shuffleDecks()</code>
+    <ul><b>Post-condition</b>: combines the <code>Deck</code> objects and shuffles them together</ul>
 </p>
