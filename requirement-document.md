@@ -336,7 +336,7 @@ A <code>Card</code> object is added to the <code>DealerHand</code> object which 
 <br />
 <p>
     <b>Class</b><br/>
-    <code>Card</code> - The cards used in each deck<br/> 
+    <code>Card</code> - The cards used in each deck, implements <code>Comparable&lt;Card&gt;</code><br/> 
     <br/>
     <b>Attributes</b><br/>    
     <code>suit</code> - The suit of the card object<br/>
