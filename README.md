@@ -7,3 +7,13 @@ Please refer to the <a href="https://github.com/chrislyle21/Online-blackjack-gam
 Issuse and features that need to be completed are found <A href="https://github.com/chrislyle21/Online-blackjack-game/projects/1">here</a>.
 
 Or new issues, features can be added <a href="https://github.com/chrislyle21/Online-blackjack-game/issues">here</a>
+
+This project is just for a bit of fun, to aid learning in GitHub, system design and the implementation of the code.  Anyone is welcome to join in or use the code in their own projects.
+
+## Progress so far:
+> - [ ] requirements document is nearly complete,
+>> - [ ] Detailed class descriptions: In progress...
+>> - [ ] Dynamic diagrams to be added for use cases: Not started yet...
+>> - [ ] Add GUI design
+> - [ ] Code to be updated with requirements: In progress...
+> - [ ] GUI to be coded: Not started yet...
