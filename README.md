@@ -1,4 +1,4 @@
-<h1>blackjack_core_objects</h1>
-<h2>Core system objects for card games.  The enum value for the card objects is set for blackjack.</h2>
+# Online Blackjack game
+This project is in the early satges of development.  The goal, is an in browser online game of blackjack.
 
-
+Please refer to the <a href="https://github.com/chrislyle21/Online-blackjack-game/wiki/Blackjack-System-Wiki-Homepage">Wiki homepage for the requirements document, class diagrams and class descriptions.
