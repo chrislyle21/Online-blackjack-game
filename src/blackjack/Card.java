@@ -61,23 +61,24 @@ class Card implements Comparable<Card>
         }
         return result;
     }
-    
+
     @Override
-    public int hashCode(){
-        int suit = 0;
-        if (this.getSuit().equals("HEARTS")){
-            suit = 2;
+    public int hashCode()
+    {
+        int faceCard = 0;
+        if (this.getValue().equals(Value.JACK))
+        {
+            faceCard = 10;
         }
-        else if (this.getSuit().equals("SPADES")){
-            suit = 3;
+        else if ((this.getValue().equals(Value.QUEEN)))
+        {
+            faceCard = 11;
         }
-        else if (this.getSuit().equals("CLUBS")) {
-            suit = 4;
+        else if (this.getValue().equals(Value.KING))
+        {
+            faceCard = 12;
         }
-        else{
-        suit = 5;
-        }
-        return (int) (Math.pow(this.getValue().getNumVal(), suit));
+        return (this.getValue().getNumVal() + faceCard);
     }
 
     @Override

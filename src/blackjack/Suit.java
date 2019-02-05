@@ -11,9 +11,20 @@ package blackjack;
  */
 enum Suit
 {
-    HEARTS,
-    DIAMONDS,
-    CLUBS,
-    SPADES
+    HEARTS(2),
+    DIAMONDS(3),
+    CLUBS(4),
+    SPADES(5);
 
+    private final int suitVal;
+
+    private Suit(int aSuitVal)
+    {
+        this.suitVal = aSuitVal;
+    }
+
+    int getSuitVal()
+    {
+        return this.suitVal;
+    }
 }
