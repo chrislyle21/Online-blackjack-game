@@ -5,7 +5,7 @@ This project is in the early stages of development.  The goal is an in browser o
 
 This project is just for a bit of fun, to aid learning in GitHub, system design, systems integration and the implementation of the code.  Anyone is welcome to join in or use the code in their own projects.
 
-The core system objects are designed as general as I could make them. They should be able to be adapted to any card game that is provided with a coordinating class and only slight adjustments to the numerical values in enum Value and Suit (in some cases), which dictate the scoring of each card.
+The core system objects are designed as general as I could make them. There should not be any issues adapting the core objects to any card game, only slight adjustments should need to be made to the numerical values in enum Value and Suit (in some cases), which dictate the scoring of each card.  A suitable coordinating class will also need to be provided.
 
 ## Sources of information
 #### Project design pages
