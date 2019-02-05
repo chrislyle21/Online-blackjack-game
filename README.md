@@ -6,7 +6,7 @@ Please refer to the <a href="https://github.com/chrislyle21/Online-blackjack-gam
 
 Issuse and features that need to be completed are found <A href="https://github.com/chrislyle21/Online-blackjack-game/projects/1">here</a>.
 
-Or new issues, features or bugs can be added <a href="https://github.com/chrislyle21/Online-blackjack-game/issues">here</a>
+New issues, features or bugs can be added <a href="https://github.com/chrislyle21/Online-blackjack-game/issues">here</a>
 
 This project is just for a bit of fun, to aid learning in GitHub, system design, systems integration and the implementation of the code.  Anyone is welcome to join in or use the code in their own projects.
 
