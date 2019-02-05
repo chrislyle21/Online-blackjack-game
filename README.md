@@ -14,7 +14,7 @@ Please refer to the <a href="https://github.com/chrislyle21/Online-blackjack-gam
 
 #### Project To Do board
 
-Issuse and features that need to be completed are found <A href="https://github.com/chrislyle21/Online-blackjack-game/projects/1">here</a>.
+Issues and features that need to be completed are found <A href="https://github.com/chrislyle21/Online-blackjack-game/projects/1">here</a>.
 
 #### Project New issues
 
