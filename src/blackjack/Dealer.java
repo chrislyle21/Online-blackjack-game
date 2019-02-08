@@ -28,7 +28,8 @@ class Dealer
     private int numOfDecks;
 
     /**
-     * 
+     * Creates a new Dealer object with the number of Deck objects used in game
+     * set to numOfDecks.
      * @param deckAmount - is used with addDecks()
      * @see Dealer#addDecks()
      */

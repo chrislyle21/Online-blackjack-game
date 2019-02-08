@@ -34,15 +34,18 @@ public class main
         bjCoord.dealCards();
         bjCoord.dealCards();
         List<Card> temp = new ArrayList<>();
-      
+
         for (Player each : bjCoord.getPlayers())
         {
             System.out.print(each.getPlayerHand().getCards().toString() + "\n");
             System.out.print(
                     each.getPlayerName() + ": hand = " + each.getPlayerHand().getHandValue() + "\n");
             temp = each.getPlayerHand().getCards();
-            for(Card eachCard : temp){ System.out.println(eachCard.hashCode());}
-           
+            for (Card eachCard : temp)
+            {
+                System.out.println(eachCard.hashCode());
+            }
+
         }
         System.out.println(bjCoord.toString());
 
