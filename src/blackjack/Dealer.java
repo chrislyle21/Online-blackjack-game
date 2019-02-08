@@ -24,7 +24,7 @@ class Dealer
     // All Card objects extracted and combined in to 1 larger Card List.
     private List<Card> combinedDecks;
     private Action dealerAction;
-    private DealerHand dealerHand;
+    private Hand dealerHand;
     private int numOfDecks;
 
     /**
@@ -35,7 +35,7 @@ class Dealer
      */
     Dealer(int deckAmount)
     {
-        this.dealerHand = new DealerHand();
+        this.dealerHand = new Hand();
         this.decks = new ArrayList<>();
         this.combinedDecks = new ArrayList<>();
         this.numOfDecks = deckAmount;
@@ -125,7 +125,7 @@ class Dealer
      *
      * @return Dealer.DealerHand
      */
-    DealerHand getDealerHand()
+    Hand getDealerHand()
     {
         return this.dealerHand;
     }

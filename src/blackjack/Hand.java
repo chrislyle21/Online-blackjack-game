@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author chris
  */
-abstract class Hand
+class Hand
 {
 
     private int handValue;
