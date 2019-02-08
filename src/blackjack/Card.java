@@ -6,8 +6,10 @@
 package blackjack;
 
 /**
+ * This class is a card used in game. This object uses two enums for the value
+ * and the suit of this class.
  *
- * @author chris
+ * @author Chris Lyle
  */
 class Card implements Comparable<Card>
 {
@@ -15,22 +17,45 @@ class Card implements Comparable<Card>
     private final Value value;
     private final Suit suit;
 
+    /**
+     * Creates a new Card object with the value set to aValue and the suit set
+     * to aSuit.
+     *
+     * @param aValue
+     * @param aSuit
+     */
     Card(Value aValue, Suit aSuit)
     {
         this.value = aValue;
         this.suit = aSuit;
     }
 
+    /**
+     *
+     * @return Value
+     */
     Value getValue()
     {
         return this.value;
     }
 
+    /**
+     *
+     * @return Suit
+     */
     Suit getSuit()
     {
         return this.suit;
     }
 
+    /**
+     * Compares this Card object with the use of the enum Value.
+     * returns a negative if this object is before aCard, 0 if equal and
+     * positive if this object comes after aCard.
+     * @param aCard
+     * @return int
+     * @see Value#getNumVal()
+     */
     @Override
     public int compareTo(Card aCard)
     {
@@ -47,6 +72,12 @@ class Card implements Comparable<Card>
         return result;
     }
 
+    /**
+     * returns true if the receiver is equal to obj. Otherwise returns false
+     * obj must not be null and must be of the same class.
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean equals(Object obj)
     {
@@ -54,7 +85,8 @@ class Card implements Comparable<Card>
         if (obj != null || obj.getClass() == this.getClass())
         {
             Card otherCard = ((Card) obj);
-            if (this.getValue() == otherCard.getValue() && otherCard.getSuit() == this.getSuit())
+            if (this.getValue() == otherCard.getValue() 
+                    && otherCard.getSuit() == this.getSuit())
             {
                 result = true;
             }
@@ -62,27 +94,50 @@ class Card implements Comparable<Card>
         return result;
     }
 
+    /**
+     * returns a calculated hash code for this class
+     * @return int
+     */
     @Override
     public int hashCode()
     {
         int faceCard = 0;
+        int suitType = 0;
         switch (this.getValue())
         {
             case JACK:
-                faceCard = 10;
+                faceCard = 2;
                 break;
             case QUEEN:
-                faceCard = 11;
+                faceCard = 3;
                 break;
             case KING:
-                faceCard = 12;
+                faceCard = 4;
                 break;
             default:
                 break;
         }
-        return (this.getValue().getNumVal() + faceCard);
+        switch (this.getSuit())
+        {
+            case HEARTS:
+                suitType = 25;
+                break;
+            case SPADES:
+                suitType = 36;
+                break;
+            case CLUBS:
+                suitType = 47;
+                break;
+            default:
+                break;
+        }
+        return (this.getValue().getNumVal() + faceCard + suitType);
     }
 
+    /**
+     *  returns a string representation of the Card object linked to this object
+     * @return String
+     */
     @Override
     public String toString()
     {
