@@ -66,17 +66,19 @@ class Card implements Comparable<Card>
     public int hashCode()
     {
         int faceCard = 0;
-        if (this.getValue().equals(Value.JACK))
+        switch (this.getValue())
         {
-            faceCard = 10;
-        }
-        else if ((this.getValue().equals(Value.QUEEN)))
-        {
-            faceCard = 11;
-        }
-        else if (this.getValue().equals(Value.KING))
-        {
-            faceCard = 12;
+            case JACK:
+                faceCard = 10;
+                break;
+            case QUEEN:
+                faceCard = 11;
+                break;
+            case KING:
+                faceCard = 12;
+                break;
+            default:
+                break;
         }
         return (this.getValue().getNumVal() + faceCard);
     }
