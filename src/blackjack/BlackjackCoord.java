@@ -24,6 +24,11 @@ public class BlackjackCoord
     private final Dealer dealer;
     private final List<Player> players;
 
+    /**
+     *
+     * @param aMinBet
+     * @param numberOfDecks
+     */
     public BlackjackCoord(int aMinBet, int numberOfDecks)
     {
         this.minimumBet = aMinBet;
@@ -31,21 +36,38 @@ public class BlackjackCoord
         this.players = new ArrayList<>();
     }
 
+    /**
+     *
+     * @return
+     */
     public Dealer getDealer()
     {
         return this.dealer;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Player> getPlayers()
     {
         return this.players;
     }
 
+    /**
+     *
+     * @param aPlayer
+     * @return
+     */
     public PlayerHand getPlayerHand(Player aPlayer)
     {
         return aPlayer.getPlayerHand();
     }
 
+    /**
+     *
+     * @param aName
+     */
     public void addPlayer(String aName)
     {
         Player player = new Player(aName);
@@ -80,6 +102,12 @@ public class BlackjackCoord
         return bets;
     }
 
+    /**
+     *
+     * @param aPlayer
+     * @param aBet
+     * @return
+     */
     public boolean placeBet(Player aPlayer, int aBet)
     {
         boolean result = false;
@@ -94,6 +122,11 @@ public class BlackjackCoord
         return result;
     }
 
+    /**
+     * Deals one card to each Player object.  The variable Counter is used to 
+     * track the position is the deck.
+     * @see Dealer#addToPlayerHand(blackjack.Hand, blackjack.Card)
+     */
     public void dealCards()
     {
         for (Player each : this.getPlayers())
@@ -105,9 +138,9 @@ public class BlackjackCoord
     }
 
     /**
-     *
+     * 
      * @param aPlayer
-     * @return
+     * @return aPlayer.Bet
      */
     public Bet getPlayerBet(Player aPlayer)
     {
@@ -124,29 +157,50 @@ public class BlackjackCoord
         return aPlayer.getPlayerAction();
     }
 
+    /**
+     *
+     * @return Dealer.Action
+     */
     public Action getDealerAction()
     {
 
         return this.getDealer().getDealerAction();
     }
 
+    /**
+     * 
+     * @param anAction
+     */
     public void setDealerAction(String anAction)
     {
         Action action = Action.valueOf(anAction);
         this.getDealer().setDealerAction(action);
     }
 
+    /**
+     *
+     * @param aPlayer
+     * @param anAction
+     */
     public void setPlayerAction(Player aPlayer, String anAction)
     {
         Action action = Action.valueOf(anAction);
         aPlayer.setPlayerAction(action);
     }
 
+    /**
+     *
+     * @return
+     */
     public int getMinimumBet()
     {
         return this.minimumBet;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString()
     {
