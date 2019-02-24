@@ -49,9 +49,10 @@ class Card implements Comparable<Card>
     }
 
     /**
-     * Compares this Card object with the use of the enum Value.
-     * returns a negative if this object is before aCard, 0 if equal and
-     * positive if this object comes after aCard.
+     * Compares this Card object with the use of the enum Value. returns a
+     * negative if this object is before aCard, 0 if equal and positive if this
+     * object comes after aCard.
+     *
      * @param aCard
      * @return int
      * @see Value#getNumVal()
@@ -73,8 +74,9 @@ class Card implements Comparable<Card>
     }
 
     /**
-     * returns true if the receiver is equal to obj. Otherwise returns false
-     * obj must not be null and must be of the same class.
+     * returns true if the receiver is equal to obj. Otherwise returns false obj
+     * must not be null and must be of the same class.
+     *
      * @param obj
      * @return boolean
      */
@@ -85,7 +87,7 @@ class Card implements Comparable<Card>
         if (obj != null || obj.getClass() == this.getClass())
         {
             Card otherCard = ((Card) obj);
-            if (this.getValue() == otherCard.getValue() 
+            if (this.getValue() == otherCard.getValue()
                     && otherCard.getSuit() == this.getSuit())
             {
                 result = true;
@@ -94,13 +96,16 @@ class Card implements Comparable<Card>
         return result;
     }
 
+
     /**
      * returns a calculated hash code for this class
+     *
      * @return int
      */
     @Override
     public int hashCode()
     {
+        int hashVal = 0;
         int faceCard = 0;
         int suitType = 0;
         switch (this.getValue())
@@ -120,22 +125,24 @@ class Card implements Comparable<Card>
         switch (this.getSuit())
         {
             case HEARTS:
-                suitType = 25;
+                suitType = 15;
                 break;
             case SPADES:
-                suitType = 36;
+                suitType = 30;
                 break;
             case CLUBS:
-                suitType = 47;
+                suitType = 45;
                 break;
             default:
                 break;
         }
-        return (this.getValue().getNumVal() + faceCard + suitType);
+        hashVal = (this.getValue().getNumVal() + faceCard + suitType);
+        return hashVal;
     }
 
     /**
-     *  returns a string representation of the Card object linked to this object
+     * returns a string representation of the Card object linked to this object
+     *
      * @return String
      */
     @Override

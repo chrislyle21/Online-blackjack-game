@@ -11,16 +11,16 @@ import java.util.Collections;
 
 /**
  *
- * @author Chris Lyle
- * This class controls the dealing, combining and shuffling of all the Card 
- * objects.
- * The Dealer class plays in a game of blackjack with a limited amount of 
- * actions.
+ * @author Chris Lyle 
+ * This class controls the dealing, combining and shuffling
+ * of all the Card objects. The Dealer class plays in a card game with a
+ * limited amount of actions.
  */
 class Dealer
 {
+
     // A list of Deck objects each Deck contains 52 Card abjects.
-    private final List<Deck> decks; 
+    private final List<Deck> decks;
     // All Card objects extracted and combined in to 1 larger Card List.
     private List<Card> combinedDecks;
     private Action dealerAction;
@@ -30,6 +30,7 @@ class Dealer
     /**
      * Creates a new Dealer object with the number of Deck objects used in game
      * set to numOfDecks.
+     *
      * @param deckAmount - is used with addDecks()
      * @see Dealer#addDecks()
      */
@@ -42,7 +43,8 @@ class Dealer
     }
 
     /**
-     * 
+     * Creates numOfDecks amount of Deck objects and returns a list of Deck
+     * objects.
      * @return List<Deck>
      */
     private List<Deck> addDecks()
@@ -51,7 +53,7 @@ class Dealer
         {
             this.decks.add(n, new Deck());
         }
-
+        
         return this.decks;
     }
 
@@ -60,20 +62,21 @@ class Dealer
      */
     private void combineDecks()
     {
-
+        
         for (Deck eachDeck : this.addDecks())
         {
             for (int n = 0; n < eachDeck.getCards().length; n++)
             {
                 this.combinedDecks.add(eachDeck.getCard(n));
             }
-
+            
         }
     }
 
     /**
-     * The Card list is shuffled.
-     * @see Dealer#combineDecks() 
+     * Calls combineDecks, then shuffles the list of card objects.
+     *
+     * @see Dealer#combineDecks()
      */
     void shuffleDecks()
     {
@@ -81,12 +84,13 @@ class Dealer
         for (int n = 0; n < 4; n++)
         {
             Collections.shuffle(this.combinedDecks);
-
+            
         }
     }
 
     /**
-     *
+     * Returns a list of Deck objects linked to the receiver.
+     * 
      * @return List<Deck>
      */
     List<Deck> getDecks()
@@ -95,7 +99,8 @@ class Dealer
     }
 
     /**
-     *
+     * Returns a list of Card objects.
+     * 
      * @return List<Card>
      */
     List<Card> getCombinedDecks()
@@ -104,7 +109,7 @@ class Dealer
     }
 
     /**
-     *
+     * Returns a Action object linked to the receiver.
      * @return this.Action
      */
     Action getDealerAction()
@@ -113,7 +118,7 @@ class Dealer
     }
 
     /**
-     *
+     * Sets the Action object linked to the receiver.
      * @param anAction
      */
     void setDealerAction(Action anAction)
@@ -122,7 +127,7 @@ class Dealer
     }
 
     /**
-     *
+     * Returns the Hand object linked to the receiver.
      * @return Dealer.DealerHand
      */
     Hand getDealerHand()
@@ -132,6 +137,7 @@ class Dealer
 
     /**
      * Adds 1 Card object to the players PlayerHand object.
+     *
      * @param aHand
      * @param aCard
      * @see Hand#addToHand(blackjack.Card)
@@ -139,6 +145,7 @@ class Dealer
     void addToPlayerHand(Hand aHand, Card aCard)
     {
         aHand.addToHand(aCard);
+        aHand.setHandValue(aCard.getValue().getNumVal());
     }
 
     /**
@@ -150,8 +157,9 @@ class Dealer
     }
 
     /**
-     * A string representation of the Deck objects linked to the receiver and the 
-     * receiver’s last action
+     * A string representation of the Deck objects linked to the receiver and
+     * the receiver’s last action
+     *
      * @return this.String
      */
     @Override
