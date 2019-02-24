@@ -5,7 +5,6 @@
  */
 package blackjack;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,6 +17,8 @@ public class main
     /**
      * @param args the command line arguments
      */
+    
+
     public static void main(String[] args)
     {
         BlackjackCoord bjCoord = new BlackjackCoord(5, 6);
@@ -32,8 +33,10 @@ public class main
         bjCoord.getDealer().shuffleDecks();
 
         bjCoord.dealCards();
+        System.out.println(bjCoord.getDealer().getCombinedDecks().size());
         bjCoord.dealCards();
-        List<Card> temp = new ArrayList<>();
+        System.out.println(bjCoord.getDealer().getCombinedDecks().size());
+        List<Card> temp;
 
         for (Player each : bjCoord.getPlayers())
         {
@@ -47,8 +50,8 @@ public class main
             }
 
         }
-        System.out.println(bjCoord.toString());
 
     }
+
 
 }
