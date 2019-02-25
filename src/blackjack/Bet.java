@@ -28,6 +28,7 @@ class Bet
     }
 
     /**
+     * Return the bet amount linked to the receiver.
      * 
      * @return int
      */
@@ -37,6 +38,7 @@ class Bet
     }
 
     /**
+     * Return the Player object linked to the receiver.
      * 
      * @return Player
      */
@@ -46,14 +48,14 @@ class Bet
     }
 
     /**
-     * A string representation of this object linked to a Player object and 
-     * this objects bet amount.
-     * @return 
+     * returns the players name and the bet amount linked to this Bet object.
+     * 
+     * @return String
      */
     @Override
     public String toString()
     {
-        return "Player; " + this.getPlayer()
+        return "Player; " + this.getPlayer().getPlayerName()
                 + " has £" + this.getBetAmount();
     }
 }
