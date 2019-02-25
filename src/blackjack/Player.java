@@ -139,7 +139,7 @@ public class Player implements Comparable<Player>
     }
 
     /**
-     * Compares thisPlayer object to aPlayer by the amount of credits that is 
+     * Compares this Player object to aPlayer by the amount of credits that is 
      * linked to the receiver.
      * 
      * @param aPlayer

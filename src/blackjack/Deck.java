@@ -6,8 +6,8 @@
 package blackjack;
 
 /**
- * This class is a deck of 52 Card objects.
  * @author Chris Lyle
+ * This class is a deck of 52 Card objects. 
  */
 final class Deck
 {
