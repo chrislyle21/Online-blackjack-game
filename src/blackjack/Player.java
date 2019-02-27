@@ -5,6 +5,8 @@
  */
 package blackjack;
 
+import java.util.List;
+
 /**
  *
  * @author Chris Lyle
@@ -17,27 +19,28 @@ public class Player implements Comparable<Player>
     private int playerCredits;
     private Bet bet;
     private Action playerAction;
-    private PlayerHand playerHand;
+    private Hand playerHand;
     /**
      * Creates a new Player object with the name aName.
-     * Creates a new PlayerHand object and links itr to the receiver.
+     * Creates a new Hand object and links it to the receiver.
+     * 
      * @param aName 
      */
     Player(String aName)
     {
         this.playerName = aName;
-        this.playerHand = new PlayerHand();
+        this.playerHand = new Hand();
     }
     /**
-     * Returns the PlayerHand object linked to the receiver.
+     * Returns the Hand object linked to the receiver.
      * 
-     * @return PlayerHand 
+     * @return Hand 
      */
-    PlayerHand getPlayerHand()
+    Hand getPlayerHand()
     {
         return this.playerHand;
     }
-    
+           
     /**
      * Returns a String object representing the name of the receiver. 
      * 

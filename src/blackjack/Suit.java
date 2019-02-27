@@ -17,12 +17,20 @@ enum Suit
     SPADES(5);
 
     private final int suitVal;
-
+    /**
+     * Set int suitVal to aSuitVal. 
+     * 
+     * @param aSuitVal 
+     */
     private Suit(int aSuitVal)
     {
         this.suitVal = aSuitVal;
     }
-
+    /**
+     * returns the int suitVal
+     * 
+     * @return int
+     */
     int getSuitVal()
     {
         return this.suitVal;

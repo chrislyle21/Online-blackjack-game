@@ -8,8 +8,9 @@ package blackjack;
 import java.util.Arrays;
 
 /**
- *
- * @author chris
+ * This enum controls the value for the Card objects.  
+ * It is set up for Blackjack.
+ * @author Chris Lyle
  */
 enum Value
 {
@@ -28,12 +29,22 @@ enum Value
     KING(10);
 
     private final int numVal;
-
+    
+    /**
+     * Set int numVal to aNumVal. 
+     * 
+     * @param aNumVal 
+     */
     private Value(int aNumVal)
     {
         this.numVal = aNumVal;
     }
-
+    
+    /**
+     * returns the int numVal
+     * 
+     * @return int
+     */
     int getNumVal()
     {
         return this.numVal;

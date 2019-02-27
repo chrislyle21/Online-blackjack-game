@@ -59,9 +59,20 @@ public class BlackjackCoord
      * @param aPlayer
      * @return
      */
-    public PlayerHand getPlayerHand(Player aPlayer)
+    public Hand getPlayerHand(Player aPlayer)
     {
         return aPlayer.getPlayerHand();
+    }
+    
+    /**
+     * Return the Hand size of aPlayer.
+     * 
+     * @param aPlayer
+     * @return int
+     */
+    public int getPlayerHandSize(Player aPlayer)
+    {
+        return aPlayer.getPlayerHand().getCards().size();
     }
 
     /**
