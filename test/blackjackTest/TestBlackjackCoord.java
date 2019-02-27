@@ -43,7 +43,7 @@ public class TestBlackjackCoord
         
         try{
             for(Player each : bjCoord.getPlayers()){
-                assert bjCoord.getPlayerHand(each).getHandSize(each) == 1: 
+                assert bjCoord.getPlayerHandSize(each) == 1: 
                         "Each hand sould contain only 1 Card object";
             }
         }

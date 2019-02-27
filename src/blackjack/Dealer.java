@@ -136,7 +136,7 @@ class Dealer
     }
 
     /**
-     * Adds 1 Card object to the players PlayerHand object.
+     * Adds 1 Card object to the players Hand object.
      *
      * @param aHand
      * @param aCard
