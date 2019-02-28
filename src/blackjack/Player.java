@@ -1,11 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ * The MIT License
+ *
+ * Copyright 2019 Chris Lyle.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
 package blackjack;
-
-import java.util.List;
 
 /**
  *
@@ -15,11 +31,12 @@ import java.util.List;
 public class Player implements Comparable<Player>
 {
 
-    private String playerName;
+    private final String playerName;
     private int playerCredits;
     private Bet bet;
     private Action playerAction;
-    private Hand playerHand;
+    private final Hand playerHand;
+    
     /**
      * Creates a new Player object with the name aName.
      * Creates a new Hand object and links it to the receiver.
@@ -147,20 +164,11 @@ public class Player implements Comparable<Player>
      * 
      * @param aPlayer
      * @return int
-     */
+     */    
     @Override
     public int compareTo(Player aPlayer)
     {
-        int result = 0;
-        if (aPlayer == null || aPlayer.getClass() != this.getClass())
-        {
-            result = -1;
-        }
-        else
-        {
-            result = this.getPlayerCredits() - aPlayer.getPlayerCredits();
-        }
-        return result;
+        return this.getPlayerCredits() - aPlayer.getPlayerCredits();
     }
 
     /**

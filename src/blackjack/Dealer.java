@@ -1,7 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ * The MIT License
+ *
+ * Copyright 2019 Chris Lyle.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
 package blackjack;
 
@@ -11,10 +29,9 @@ import java.util.Collections;
 
 /**
  *
- * @author Chris Lyle 
- * This class controls the dealing, combining and shuffling
- * of all the Card objects. The Dealer class plays in a card game with a
- * limited amount of actions.
+ * @author Chris Lyle This class controls the dealing, combining and shuffling
+ * of all the Card objects. The Dealer class plays in a card game with a limited
+ * amount of actions.
  */
 class Dealer
 {
@@ -22,10 +39,10 @@ class Dealer
     // A list of Deck objects each Deck contains 52 Card abjects.
     private final List<Deck> decks;
     // All Card objects extracted and combined in to 1 larger Card List.
-    private List<Card> combinedDecks;
+    private final List<Card> combinedDecks;
     private Action dealerAction;
-    private Hand dealerHand;
-    private int numOfDecks;
+    private final Hand dealerHand;
+    private final int numOfDecks;
 
     /**
      * Creates a new Dealer object with the number of Deck objects used in game
@@ -45,6 +62,7 @@ class Dealer
     /**
      * Creates numOfDecks amount of Deck objects and returns a list of Deck
      * objects.
+     *
      * @return List<Deck>
      */
     private List<Deck> addDecks()
@@ -53,7 +71,7 @@ class Dealer
         {
             this.decks.add(n, new Deck());
         }
-        
+
         return this.decks;
     }
 
@@ -62,14 +80,14 @@ class Dealer
      */
     private void combineDecks()
     {
-        
+
         for (Deck eachDeck : this.addDecks())
         {
             for (int n = 0; n < eachDeck.getCards().length; n++)
             {
                 this.combinedDecks.add(eachDeck.getCard(n));
             }
-            
+
         }
     }
 
@@ -84,13 +102,13 @@ class Dealer
         for (int n = 0; n < 4; n++)
         {
             Collections.shuffle(this.combinedDecks);
-            
+
         }
     }
 
     /**
      * Returns a list of Deck objects linked to the receiver.
-     * 
+     *
      * @return List<Deck>
      */
     List<Deck> getDecks()
@@ -100,7 +118,7 @@ class Dealer
 
     /**
      * Returns a list of Card objects.
-     * 
+     *
      * @return List<Card>
      */
     List<Card> getCombinedDecks()
@@ -110,6 +128,7 @@ class Dealer
 
     /**
      * Returns a Action object linked to the receiver.
+     *
      * @return this.Action
      */
     Action getDealerAction()
@@ -119,6 +138,7 @@ class Dealer
 
     /**
      * Sets the Action object linked to the receiver.
+     *
      * @param anAction
      */
     void setDealerAction(Action anAction)
@@ -128,6 +148,7 @@ class Dealer
 
     /**
      * Returns the Hand object linked to the receiver.
+     *
      * @return Dealer.DealerHand
      */
     Hand getDealerHand()
