@@ -24,6 +24,7 @@
 package blackjack;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -49,10 +50,10 @@ public class main
             bjCoord.addPlayer(nameArr[n]);
         }
         bjCoord.getDealer().shuffleDecks();
-
+        bjCoord.getDealer().shuffleDecks();
         bjCoord.dealCards();
-        System.out.println(bjCoord.getDealer().getCombinedDecks().size());
-        bjCoord.dealCards();
+        
+      
         System.out.println(bjCoord.getDealer().getCombinedDecks().size());
         List<Card> temp;
 
@@ -65,9 +66,14 @@ public class main
             for (Card eachCard : temp)
             {
                 System.out.println(eachCard.hashCode());
-            }
-
+            }          
+            bjCoord.playerActions(each);
         }
+        
+        
+        
+            System.out.println(bjCoord.getPlayerActions());
+            System.out.println(bjCoord.getDealer().getDealerHand().getCards());
 
     }
 
