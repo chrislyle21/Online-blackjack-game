@@ -168,6 +168,12 @@ class Dealer
         aHand.addToHand(aCard);
         aHand.setHandValue(aCard.getValue().getNumVal());
     }
+    
+    void addToDealerHand(Card aCard)
+    {
+        this.getDealerHand().addToHand(aCard);
+        this.getDealerHand().setHandValue(aCard.getValue().getNumVal());
+    }
 
     /**
      * Clears the Card objects from this DealerHand

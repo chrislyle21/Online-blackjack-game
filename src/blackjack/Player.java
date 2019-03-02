@@ -179,7 +179,7 @@ public class Player implements Comparable<Player>
     @Override
     public String toString()
     {
-        return "Player name: " + this.getPlayerName() + "/nCredits: " 
+        return "Player name: " + this.getPlayerName() + "\nCredits: " 
                 + this.getPlayerCredits();
     }
 }

@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * This is the coordinating class for a game of the card game Blackjack.
  *
  * @author chris
  */
@@ -41,6 +42,8 @@ public class BlackjackCoord
     private final int minimumBet;
     private final Dealer dealer;
     private final List<Player> players;
+    private Set<Action> actionSet;
+    private Map<Player,Set<Action>> playerActions;
 
     /**
      *
@@ -52,20 +55,29 @@ public class BlackjackCoord
         this.minimumBet = aMinBet;
         this.dealer = new Dealer(numberOfDecks);
         this.players = new ArrayList<>();
+        actionSet = new HashSet<>();
+        playerActions = new HashMap<>();
     }
 
     /**
+     * Returns the Dealer object linked to the receiver.
      *
-     * @return
+     * @return Dealer
      */
     public Dealer getDealer()
     {
         return this.dealer;
     }
+    
+    public Map<Player, Set<Action>> getPlayerActions()
+    {
+        return this.playerActions;
+    }
 
     /**
+     * Returns a list of Player objects linker to the receiver.
      *
-     * @return
+     * @return List<Player>
      */
     public List<Player> getPlayers()
     {
@@ -73,18 +85,19 @@ public class BlackjackCoord
     }
 
     /**
+     * Returns the Hand object linked to aPlayer.
      *
      * @param aPlayer
-     * @return
+     * @return Hand
      */
     public Hand getPlayerHand(Player aPlayer)
     {
         return aPlayer.getPlayerHand();
     }
-    
+
     /**
-     * Return the Hand size of aPlayer.
-     * 
+     * Return the size of the Hand object linked to aPlayer.
+     *
      * @param aPlayer
      * @return int
      */
@@ -94,6 +107,8 @@ public class BlackjackCoord
     }
 
     /**
+     * Adds a Player object to a game of Blackjack with the String aName as the
+     * Player objects name and a 100 credits.
      *
      * @param aName
      */
@@ -105,8 +120,10 @@ public class BlackjackCoord
     }
 
     /**
+     * Returns a Map with a Dealer object as the key and a List of Player 
+     * objects as the value.
      *
-     * @return
+     * @return Map<Dealer, List<Player>>
      */
     public Map<Dealer, List<Player>> getDealerAndPlayers()
     {
@@ -116,8 +133,9 @@ public class BlackjackCoord
     }
 
     /**
-     *
-     * @return
+     *Returns a Set of Bet objects.
+     * 
+     * @return Set<Bet>
      */
     public Set<Bet> getBets()
     {
@@ -133,9 +151,10 @@ public class BlackjackCoord
 
     /**
      *
+     * 
      * @param aPlayer
      * @param aBet
-     * @return
+     * @return boolean
      */
     public boolean placeBet(Player aPlayer, int aBet)
     {
@@ -152,22 +171,121 @@ public class BlackjackCoord
     }
 
     /**
-     * Deals one card to each Player object.  The variable Counter is used to 
+     * Deals one card to each Player object. The variable Counter is used to
      * track the position is the deck.
+     *
      * @see Dealer#addToPlayerHand(blackjack.Hand, blackjack.Card)
      */
     public void dealCards()
     {
         for (Player each : this.getPlayers())
         {
-            this.getDealer().addToPlayerHand(each.getPlayerHand(), 
+            this.getDealer().addToPlayerHand(each.getPlayerHand(),
                     this.getDealer().getCombinedDecks().remove(this.counter));
             this.counter++;
+        }
+        this.getDealer().addToDealerHand(this.getDealer()
+                .getCombinedDecks().remove(counter));
+        this.counter++;
+    }
+
+    /**
+     *
+     *
+     * @param aPlayer
+     * @return Set<Action>
+     */
+    public Map<Player, Set<Action>>playerActions(Player aPlayer)
+    {
+        Set<Action> tmpSet = new HashSet<>();                  
+            this.surrender(aPlayer);
+            this.insurance(aPlayer);
+            this.doubleUp(aPlayer);
+            this.hit(aPlayer);
+            this.stand(aPlayer);
+            this.split(aPlayer);
+            tmpSet.addAll(actionSet);
+            actionSet.clear();
+            this.playerActions.put(aPlayer, tmpSet);     
+        return this.playerActions;
+    }
+    
+    /**
+     * 
+     * 
+     * @param aPlayer 
+     */
+    private void split(Player aPlayer){
+        if (aPlayer.getPlayerHand().getCards().size() > 1 && aPlayer.getPlayerHand().getHandValue() < 21 && aPlayer.getPlayerHand().getCards().get(0).equals(aPlayer.getPlayerHand().getCards().get(1)))
+        {
+            actionSet.add(Action.SPLIT);
+        }
+    }
+    
+    /**
+     * 
+     * 
+     * @param aPlayer 
+     */
+    private void stand(Player aPlayer){
+        if (aPlayer.getPlayerHand().getHandValue() < 21)
+        {
+            actionSet.add(Action.STAND);
+        }
+    }
+    
+    /**
+     * 
+     * @param aPlayer 
+     */
+    private void hit(Player aPlayer){
+        if (aPlayer.getPlayerHand().getHandValue() < 21)
+        {
+            actionSet.add(Action.HIT);
+        }
+    }
+    
+    /**
+     * 
+     * 
+     * @param aPlayer 
+     */
+    private void doubleUp(Player aPlayer)
+    {
+        if (aPlayer.getPlayerHand().getCards().size() < 3 && aPlayer.getPlayerHand().getHandValue() < 21 && aPlayer.getPlayerCredits() >= (this.getMinimumBet()/2))
+        {
+            actionSet.add(Action.DOUBLE);
         }
     }
 
     /**
      * 
+     * 
+     * @param aPlayer 
+     */
+    private void surrender(Player aPlayer)
+    {
+        if (this.getDealer().getDealerHand().getCards().get(0).getValue() != Value.ACE && aPlayer.getPlayerHand().getCards().size() == 1)
+        {
+            actionSet.add(Action.SURRENDER);
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param aPlayer 
+     */
+    private void insurance(Player aPlayer)
+    {
+        if (this.getDealer().getDealerHand().getCards().get(0).getValue() == Value.ACE && aPlayer.getPlayerCredits() >= (this.getMinimumBet() / 2))
+        {
+            actionSet.add(Action.INSURANCE);
+        }
+    }
+
+    /**
+     *
      * @param aPlayer
      * @return aPlayer.Bet
      */
@@ -197,7 +315,7 @@ public class BlackjackCoord
     }
 
     /**
-     * 
+     *
      * @param anAction
      */
     public void setDealerAction(String anAction)
