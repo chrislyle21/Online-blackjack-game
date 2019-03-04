@@ -32,23 +32,4 @@ public class TestBlackjackCoord
             assert false: "No exception should be thrown\nError: " + e.toString();
         }       
     }
-
-    @Test
-    public void testDealCards(){
-        for(int n = 0; n < nameArr.length; n++){
-            bjCoord.addPlayer(nameArr[n]);
-        }
-       
-        bjCoord.dealCards();
-        
-        try{
-            for(Player each : bjCoord.getPlayers()){
-                assert bjCoord.getPlayerHandSize(each) == 1: 
-                        "Each hand sould contain only 1 Card object";
-            }
-        }
-        catch(Exception e){
-            assert false: "No exception should be thrown" + e.toString();
-        }
-    }
 }

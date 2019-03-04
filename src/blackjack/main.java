@@ -24,7 +24,7 @@
 package blackjack;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Scanner;
 
 /**
  *
@@ -36,11 +36,11 @@ public class main
     /**
      * @param args the command line arguments
      */
-    
+    public static BlackjackCoord bjCoord = new BlackjackCoord(5, 6);
 
     public static void main(String[] args)
     {
-        BlackjackCoord bjCoord = new BlackjackCoord(5, 6);
+        
         String[] nameArr =
         {
             "Joe Bloggs", "Chris Long", "Paul Short"
@@ -51,31 +51,46 @@ public class main
         }
         bjCoord.getDealer().shuffleDecks();
         bjCoord.getDealer().shuffleDecks();
-        bjCoord.dealCards();
+        bjCoord.dealToPlayers();
         
       
         System.out.println(bjCoord.getDealer().getCombinedDecks().size());
-        List<Card> temp;
+        
+       
 
         for (Player each : bjCoord.getPlayers())
         {
             System.out.print(each.getPlayerHand().getCards().toString() + "\n");
             System.out.print(
                     each.getPlayerName() + ": hand = " + each.getPlayerHand().getHandValue() + "\n");
-            temp = each.getPlayerHand().getCards();
-            for (Card eachCard : temp)
-            {
-                System.out.println(eachCard.hashCode());
-            }          
+            
+                     
             bjCoord.playerActions(each);
         }
         
         
+        System.out.println(bjCoord.getPlayerActions());
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Deal a card? or n to exit...");
+        String input = sc.next();
         
-            System.out.println(bjCoord.getPlayerActions());
-            System.out.println(bjCoord.getDealer().getDealerHand().getCards());
+        while (!(input.equals("n")))
+        {
+                
+            bjCoord.dealToPlayers();
+            for(Player each : bjCoord.getPlayers())
+            {   
+                System.out.print(each.getPlayerHand().getCards().toString() + "\n");
+                System.out.print(
+                each.getPlayerName() + ": hand = " + each.getPlayerHand().getHandValue() + "\n");                     
+            } 
+            bjCoord.dealToDealer();
+            bjCoord.dealerActions();
 
+            System.out.println("Dealer score: " +  bjCoord.getDealer().getDealerHand().getHandValue() + "\n"  + bjCoord.getDealer().getDealerHand().getCards());
+            System.out.println("Deal a card or enter n to exit........");
+            input = sc.next();           
+            }
+        }
     }
-
-
-}

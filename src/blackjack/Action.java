@@ -36,5 +36,6 @@ enum Action
     INSURANCE, // Option to add insurance. 
     SPLIT, // Option to split the hand.
     DOUBLE, // Option increase the size of a bet
-    SURRENDER; // Oprtion to give up.
+    SURRENDER, // Oprtion to give up.
+    WINNER; // Game winner
 }
