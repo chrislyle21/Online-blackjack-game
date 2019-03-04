@@ -43,7 +43,7 @@ public class BlackjackCoord
     private final Dealer dealer;
     private final List<Player> players;
     private Set<Action> actionSet;
-    private Map<Player,Set<Action>> playerActions;
+    private Map<Player, Set<Action>> playerActions;
 
     /**
      *
@@ -68,7 +68,7 @@ public class BlackjackCoord
     {
         return this.dealer;
     }
-    
+
     public Map<Player, Set<Action>> getPlayerActions()
     {
         return this.playerActions;
@@ -116,11 +116,11 @@ public class BlackjackCoord
     {
         Player player = new Player(aName);
         player.addCredits(1000);
-        players.add(player);
+        this.players.add(player);
     }
 
     /**
-     * Returns a Map with a Dealer object as the key and a List of Player 
+     * Returns a Map with a Dealer object as the key and a List of Player
      * objects as the value.
      *
      * @return Map<Dealer, List<Player>>
@@ -133,8 +133,8 @@ public class BlackjackCoord
     }
 
     /**
-     *Returns a Set of Bet objects.
-     * 
+     * Returns a Set of Bet objects.
+     *
      * @return Set<Bet>
      */
     public Set<Bet> getBets()
@@ -151,7 +151,7 @@ public class BlackjackCoord
 
     /**
      *
-     * 
+     *
      * @param aPlayer
      * @param aBet
      * @return boolean
@@ -160,7 +160,9 @@ public class BlackjackCoord
     {
         boolean result = false;
 
-        if ((aBet >= minimumBet) && ((aPlayer.getPlayerCredits() - aBet) > 0))
+        if ((aBet >= minimumBet) && ((aPlayer.getPlayerCredits() - aBet) > 0)
+                && aPlayer.getPlayerHand().getHandValue() < 21 &&
+                    aPlayer.getPlayerAction() != Action.STAND)
         {
             aPlayer.setBet(new Bet(aPlayer, aBet));
             aPlayer.deductCredits(aBet);
@@ -176,17 +178,33 @@ public class BlackjackCoord
      *
      * @see Dealer#addToPlayerHand(blackjack.Hand, blackjack.Card)
      */
-    public void dealCards()
+    public void dealToPlayers()
     {
         for (Player each : this.getPlayers())
         {
-            this.getDealer().addToPlayerHand(each.getPlayerHand(),
+            if (each.getPlayerHand().getHandValue() < 21 &&
+                    each.getPlayerAction() != Action.STAND)
+            {
+                this.getDealer().addToPlayerHand(each.getPlayerHand(),
                     this.getDealer().getCombinedDecks().remove(this.counter));
+                this.counter++;
+            }
+        }
+    }
+    
+    public void dealToDealer()
+    {
+        if (this.getDealer().getDealerAction() != Action.STAND &&
+                this.getDealer().getDealerHand().getHandValue() < 21)
+        {
+            this.getDealer().addToDealerHand(this.getDealer()
+                    .getCombinedDecks().remove(counter));
             this.counter++;
         }
-        this.getDealer().addToDealerHand(this.getDealer()
-                .getCombinedDecks().remove(counter));
-        this.counter++;
+        else
+        {
+            System.out.println(this.getDealer().getDealerHand().toString());
+        }
     }
 
     /**
@@ -195,92 +213,128 @@ public class BlackjackCoord
      * @param aPlayer
      * @return Set<Action>
      */
-    public Map<Player, Set<Action>>playerActions(Player aPlayer)
+    public Map<Player, Set<Action>> playerActions(Player aPlayer)
     {
-        Set<Action> tmpSet = new HashSet<>();                  
+        Set<Action> tmpSet = new HashSet<>();
+        if (aPlayer.getPlayerAction() != Action.STAND)
+        {            
             this.surrender(aPlayer);
             this.insurance(aPlayer);
             this.doubleUp(aPlayer);
             this.hit(aPlayer);
             this.stand(aPlayer);
             this.split(aPlayer);
-            tmpSet.addAll(actionSet);
-            actionSet.clear();
-            this.playerActions.put(aPlayer, tmpSet);     
+        }
+        if (aPlayer.getPlayerHand().getHandValue() > 21)
+        {
+            this.actionSet.add(Action.BUST);
+        }
+        else if (aPlayer.getPlayerHand().getHandValue() == 21) 
+        {
+            this.actionSet.add(Action.WINNER);
+        }
+        tmpSet.addAll(this.actionSet);
+        this.actionSet.clear();
+        this.playerActions.put(aPlayer, tmpSet);
         return this.playerActions;
     }
-    
+
     /**
-     * 
-     * 
-     * @param aPlayer 
+     *
+     *
+     * @param aPlayer
      */
-    private void split(Player aPlayer){
-        if (aPlayer.getPlayerHand().getCards().size() > 1 && aPlayer.getPlayerHand().getHandValue() < 21 && aPlayer.getPlayerHand().getCards().get(0).equals(aPlayer.getPlayerHand().getCards().get(1)))
+    private void split(Player aPlayer)
+    {
+        if (aPlayer.getPlayerHand().getHandValue() < 21 && 
+                aPlayer.getPlayerHand().getCards().size() > 1 && 
+                aPlayer.getPlayerHand().getHandValue() < 21 && 
+                aPlayer.getPlayerHand().getCards().get(0).equals(
+                        aPlayer.getPlayerHand().getCards().get(1)))
         {
-            actionSet.add(Action.SPLIT);
+            this.actionSet.add(Action.SPLIT);
         }
     }
-    
+
+    public Action dealerActions()
+    {
+        int handVal = this.getDealer().getDealerHand().getHandValue();
+        if (handVal <= 16)
+        {
+            this.getDealer().setDealerAction(Action.HIT);
+        }
+        else if (handVal > 16 && handVal < 21)
+        {
+            this.getDealer().setDealerAction(Action.STAND);
+        }
+        else
+        {
+            this.getDealer().setDealerAction(Action.BUST);
+        }
+        return this.getDealer().getDealerAction();
+    }
+
     /**
-     * 
-     * 
-     * @param aPlayer 
+     *
+     *
+     * @param aPlayer
      */
-    private void stand(Player aPlayer){
+    private void stand(Player aPlayer)
+    {
         if (aPlayer.getPlayerHand().getHandValue() < 21)
         {
-            actionSet.add(Action.STAND);
+            this.actionSet.add(Action.STAND);
         }
     }
-    
+
     /**
-     * 
-     * @param aPlayer 
+     *
+     * @param aPlayer
      */
-    private void hit(Player aPlayer){
+    private void hit(Player aPlayer)
+    {
         if (aPlayer.getPlayerHand().getHandValue() < 21)
         {
-            actionSet.add(Action.HIT);
+            this.actionSet.add(Action.HIT);
         }
     }
-    
+
     /**
-     * 
-     * 
-     * @param aPlayer 
+     *
+     *
+     * @param aPlayer
      */
     private void doubleUp(Player aPlayer)
     {
-        if (aPlayer.getPlayerHand().getCards().size() < 3 && aPlayer.getPlayerHand().getHandValue() < 21 && aPlayer.getPlayerCredits() >= (this.getMinimumBet()/2))
+        if (aPlayer.getPlayerHand().getCards().size() < 3 && aPlayer.getPlayerHand().getHandValue() < 21 && aPlayer.getPlayerCredits() >= (this.getMinimumBet() / 2))
         {
-            actionSet.add(Action.DOUBLE);
+            this.actionSet.add(Action.DOUBLE);
         }
     }
 
     /**
-     * 
-     * 
-     * @param aPlayer 
+     *
+     *
+     * @param aPlayer
      */
     private void surrender(Player aPlayer)
     {
-        if (this.getDealer().getDealerHand().getCards().get(0).getValue() != Value.ACE && aPlayer.getPlayerHand().getCards().size() == 1)
+        if (this.getDealer().getDealerHand().getCards().size() > 0 && this.getDealer().getDealerHand().getCards().get(0).getValue() != Value.ACE && aPlayer.getPlayerHand().getCards().size() == 1)
         {
-            actionSet.add(Action.SURRENDER);
+            this.actionSet.add(Action.SURRENDER);
         }
     }
 
     /**
-     * 
-     * 
-     * @param aPlayer 
+     *
+     *
+     * @param aPlayer
      */
     private void insurance(Player aPlayer)
     {
-        if (this.getDealer().getDealerHand().getCards().get(0).getValue() == Value.ACE && aPlayer.getPlayerCredits() >= (this.getMinimumBet() / 2))
+        if (this.getDealer().getDealerHand().getCards().size() > 0 && this.getPlayerHand(aPlayer).getHandValue() < 21 && this.getDealer().getDealerHand().getCards().get(0).getValue() == Value.ACE && aPlayer.getPlayerCredits() >= (this.getMinimumBet() / 2))
         {
-            actionSet.add(Action.INSURANCE);
+            this.actionSet.add(Action.INSURANCE);
         }
     }
 
